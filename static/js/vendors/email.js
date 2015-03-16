@@ -39,7 +39,7 @@ function cargaSendMail(){
      
             data: datos,
             // hacemos referencia al archivo contacto.php
-            url: 'http://localhost/portafolio/static/php/contacto.php',     
+            url: 'http://betancourtyeison.github.io/static/php/contacto.php',     
             type:  'post',
             beforeSend: function () {
             //aplicamos color de borde si el envio es exitoso
