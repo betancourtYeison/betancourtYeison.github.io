@@ -1,6 +1,6 @@
 <?php
-	$email_to = "yeisonbe10@saidw.com";
-	$email_subject = "Contacto desde http://saidw.com/";
+	$email_to = "yeisonbe10@hotmail.com";
+	$email_subject = "Contacto desde http://betancourtyeison.github.io/";
 
 	$email_message = "Detalles del formulario de contacto:\n\n";
 	$email_message .= "Nombre: " . $_POST['nombre'] . "\n";
