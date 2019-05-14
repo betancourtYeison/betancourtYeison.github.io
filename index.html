@@ -1,411 +1,447 @@
+
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>Portafolio</title>
-    <meta charset="utf-8" />
+	<head>
+	
+	<title>Portafolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
     <meta name="description" content="Portafolio: Yeison Betancourt Solis" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <link
-      href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/estilos.css" />
-  </head>
 
-  <body>
-    <header class="Header">
-      <button
-        class="Header-button is-active icon-showMenu"
-        id="showMenu"
-      ></button>
-      <button class="Header-button icon-hideMenu" id="hideMenu"></button>
-      <nav class="MainMenu" id="menu">
-        <ul class="MainMenu-list">
-          <li class="MainMenu-item">
-            <a class="MainMenu-link" href="#perfil"
-              ><i class="far fa-user-circle"></i> Perfil</a
-            >
-          </li>
-          <li class="MainMenu-item">
-            <a class="MainMenu-link" href="#proyectos"
-              ><i class="fas fa-code"></i> Proyectos</a
-            >
-          </li>
-          <li class="MainMenu-item">
-            <a class="MainMenu-link" href="#contacto"
-              ><i class="fas fa-id-card"></i> Contacto</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <figure class="Header-imageContainer">
-        <img
-          src="static/images/avatar.jpg"
-          alt="Imagen personal"
-          class="Header-image"
-        />
-        <figcaption class="Header-imageDescription">
-          <a
-            href="https://github.com/betancourtYeison"
-            target="_black"
-            class="Header-link"
-            >@betancourtYeison</a
-          >
-        </figcaption>
-      </figure>
-      <p class="Header-name">Yeison Betancourt S</p>
-    </header>
-    <section id="perfil" class="Profile">
-      <div class="u-containerDefault">
-        <h2 class="Profile-title u-title">Perfil</h2>
-        <p class="Profile-description">
-          <strong>Bienvenido! </strong
-          ><span class="Profile-span"
-            >Consulta mi portafolio y si deseas mas información puedes</span
-          >
-          <em>contactarme</em>
-        </p>
-        <p class="Profile-hvUser">
-          <a
-            href="static/resources/CV-YesonBetancourtSolis-Espanol.pdf"
-            target="_black"
-            class="Profile-link hvUser"
-            ><i class="far fa-user-circle"></i> Hoja de vida (ES)</a
-          >
-          <a
-            href="static/resources/CV-YesonBetancourtSolis-English.pdf"
-            target="_black"
-            class="Profile-link hvUser"
-            ><i class="far fa-user-circle"></i> Hoja de vida (EN)</a
-          >
-        </p>
-        <a
-          href="https://github.com/betancourtYeison"
-          target="_black"
-          class="Profile-link github"
-          ><i class="fab fa-github-square"></i> betancourtYeison</a
-        >
-        <a
-          href="https://www.linkedin.com/in/betancourtyeison/"
-          target="_black"
-          class="Profile-link linkedin"
-          ><i class="fab fa-linkedin"></i> @betancourtYeison</a
-        >
-        <a
-          href="http://www.facebook.com/betancourtYeison"
-          target="_black"
-          class="Profile-link facebook"
-          ><i class="fab fa-facebook-square"></i> Yeison Betancourt</a
-        >
-      </div>
-    </section>
-    <section class="Slider">
-      <div class="Slider-container">
-        <ul class="rslides">
-          <li>
-            <img
-              src="static/images/slide1.jpg"
-              alt="Web Design"
-              title="Web Design"
-              width="1024"
-              height="400"
-            />
-          </li>
-          <li>
-            <img
-              src="static/images/slide2.jpg"
-              alt="Responsive Design"
-              title="Responsive Design"
-              width="1024"
-              height="400"
-            />
-          </li>
-          <li>
-            <img
-              src="static/images/slide3.jpg"
-              alt="All in one click"
-              title="All in one click"
-              width="1024"
-              height="400"
-            />
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="proyectos" class="Work">
-      <div class="u-containerDefault">
-        <h2 class="Work-title u-title">Angular</h2>
-      </div>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="https://betancourtyeison.github.io/angular-fireadmin/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/angular-fire.jpg"
-              alt="Angular Firebase"
-          /></a>
-          <figcaption class="Work-description">
-            Angular-Firebase
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="https://betancourtYeison.github.io/angular-admin/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/angular-admin.jpg"
-              alt="Angular Admin"
-          /></a>
-          <figcaption class="Work-description">
-            Angular-Apps
-          </figcaption>
-        </figure>
-      </article>
-      <div class="u-containerDefault">
-        <h2 class="Work-title u-title">Vue</h2>
-      </div>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a href="https://vue-firebase-2c9bf.firebaseapp.com/" target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/vue-firebase.jpg"
-              alt="Vue Firebase"
-          /></a>
-          <figcaption class="Work-description">
-            Vue-Firebase
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a href="https://betancourtyeison.github.io/vue-chat/" target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/vue-chat.jpg"
-              alt="Vue Chat"
-          /></a>
-          <figcaption class="Work-description">
-            Vue-Chat
-          </figcaption>
-        </figure>
-      </article>
-      <div class="u-containerDefault">
-        <h2 class="Work-title u-title">React</h2>
-      </div>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="https://betancourtyeison.github.io/weather-app/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/weather-app.jpg"
-              alt="Weather App React"
-          /></a>
-          <figcaption class="Work-description">
-            Clima
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="https://betancourtyeison.github.io/api-youtube-react/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/api-youtube-react.jpg"
-              alt="Api Youtube React"
-          /></a>
-          <figcaption class="Work-description">
-            Api Youtube
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="https://betancourtyeison.github.io/customers-app/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/customers-app.jpg"
-              alt="Customers App React"
-          /></a>
-          <figcaption class="Work-description">
-            CRUD de Clientes
-          </figcaption>
-        </figure>
-      </article>
-      <div class="u-containerDefault">
-        <h2 class="Work-title u-title">AngularJS</h2>
-      </div>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a href="http://betancourtyeison.github.io/angularJS/" target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/angularJS.jpg"
-              alt="Angular JS"
-          /></a>
-          <figcaption class="Work-description">
-            Desarrollo Web con AngularJS
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="http://betancourtyeison.github.io/registradorVentas-frontend/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/registradorVentas.jpg"
-              alt="Registrador de Ventas"
-          /></a>
-          <figcaption class="Work-description">
-            RegistradorVentas con AngularJS
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="http://betancourtyeison.github.io/uniflix-frontend/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/multimediaShop.jpg"
-              alt="Multimedia Shop"
-          /></a>
-          <figcaption class="Work-description">
-            Multimedia Shop con AngularJS
-          </figcaption>
-        </figure>
-      </article>
-      <div class="u-containerDefault">
-        <h2 class="Work-title u-title">HTML ECMAScript CSS3</h2>
-      </div>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a href="http://betancourtyeison.github.io/juegos/" target="_black"
-            ><img class="Work-image" src="static/images/juegos.jpg" alt="Juegos"
-          /></a>
-          <figcaption class="Work-description">Juegos con JS</figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="http://betancourtyeison.github.io/busquedaArtistas/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/artista.jpg"
-              alt="Desarrollo Web con Ajax last.fm/api"
-          /></a>
-          <figcaption class="Work-description">
-            Desarrollo Web con Ajax last.fm/api
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a
-            href="http://betancourtyeison.github.io/blogPuls2015/"
-            target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/puls.jpg"
-              alt="Desarrollo Web con JQuery"
-          /></a>
-          <figcaption class="Work-description">
-            Desarrollo Web con JQuery
-          </figcaption>
-        </figure>
-      </article>
-      <article class="Work-item">
-        <figure class="Work-imageContainer">
-          <a href="http://betancourtyeison.github.io/bootstrap/" target="_black"
-            ><img
-              class="Work-image"
-              src="static/images/bootstrap.jpg"
-              alt="Desarrollo Web con Responsive Design"
-          /></a>
-          <figcaption class="Work-description">
-            Diseño responsivo usando Bootstrap
-          </figcaption>
-        </figure>
-      </article>
-      <div class="u-containerDefault">
-        <h2 class="Work-title u-title">CMS</h2>
-      </div>
-      <div class="Work-container u-containerDefault">
-        <article class="Work-item">
-          <figure class="Work-imageContainer">
-            <a href="http://refratek.com/" target="_black"
-              ><img
-                class="Work-image"
-                src="static/images/refratek.jpg"
-                alt="Refratek S.A"
-            /></a>
-            <figcaption class="Work-description">
-              Empresa Refratek S.A
-            </figcaption>
-          </figure>
-        </article>
-        <article class="Work-item">
-          <figure class="Work-imageContainer">
-            <a href="http://refrastrabe.com/" target="_black"
-              ><img
-                class="Work-image"
-                src="static/images/refrastrabe.jpg"
-                alt="Refrastrabe S.A"
-            /></a>
-            <figcaption class="Work-description">
-              Empresa Refrastrabe S.A
-            </figcaption>
-          </figure>
-        </article>
-      </div>
-    </section>
-    <footer id="contacto" class="Footer">
-      <div class="Footer-left">
-        <h3 class="Footer-title">Contacto</h3>
-        <p class="Footer-contact">
-          YEISON BETANCOURT SOLIS<br />
-          yeisonbe10@hotmail.com<br />
-          Ingeniero de Sistemas<br />
-          Cel.: (+57) 316 279 3738<br />
-          Santiago de Cali - Colombia.
-        </p>
-      </div>
-      <div class="Footer-github">
-        <p>betancourtyeison.github.io 2019</p>
-      </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="static/js/vendors/responsiveslides.min.js"></script>
-    <script src="static/js/vendors/retina.min.js"></script>
-    <script src="static/js/vendors/hammer.min.js"></script>
-    <script src="static/js/vendors/menu.js"></script>
-    <script src="static/js/vendors/email.js"></script>
-  </body>
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<style>
+	.option-toggle {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-top: 5px;
+		margin-right: -30px;
+		width: 30px;
+		height: 30px;
+		background: #f64662;
+		text-align: center;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	}
+	.option-toggle i {
+		top: 2px;
+		position: relative;
+	}
+	.option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+		color:  #fff;
+		text-decoration: none;
+		outline: none;
+	}
+	</style>
+
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+	</head>
+	<body>
+
+	<header role="banner" id="fh5co-header">
+			<div class="container">
+			    <nav class="navbar navbar-default">
+		        <div class="navbar-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+		         	<a class="navbar-brand gotop js-gotop" href="#" data-nav-section="home">Portafolio</a> 
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav navbar-right">
+		            <li class="active"><a href="#" data-nav-section="home"><span>Inicio</span></a></li>
+		            <li><a href="#" data-nav-section="work"><span>Proyectos</span></a></li>
+		            <li><a href="#" data-nav-section="about"><span>Acerca de</span></a></li>
+		            <li><a href="#" data-nav-section="contact"><span>Contacto</span></a></li>
+		          </ul>
+		        </div>
+			    </nav>
+		  </div>
+	</header>
+
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<h1 class="to-animate">
+								<a href="https://github.com/betancourtYeison" target="_black" class="Header-link">
+									@betancourtYeison
+								</a>
+							</h1>
+							<h2 class="to-animate">Ingeniero de desarrollo</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slant"></div>
+	</section>
+	
+	<section id="fh5co-intro">
+		<div class="container">
+			<div class="row row-bottom-padded-lg">
+				<div class="fh5co-block to-animate" style="background-image: url(images/hv.jpg);">
+					<div class="overlay-darker"></div>
+					<div class="overlay"></div>
+					<div class="fh5co-text">
+						<i class="fh5co-intro-icon icon-paper"></i>
+						<h2>Hoja de vida (ES)</h2>
+						<p><a href="resources/CV-YesonBetancourtSolis-ES.pdf" target="_black" class="btn btn-primary">Leer más...</a></p>
+					</div>
+				</div>
+				<div class="fh5co-block to-animate" style="background-image: url(images/cv.jpg);">
+					<div class="overlay-darker"></div>
+					<div class="overlay"></div>
+					<div class="fh5co-text">
+						<i class="fh5co-intro-icon icon-paper"></i>
+						<h2>Curriculum vitae (EN)</h2>
+						<p><a href="resources/CV-YesonBetancourtSolis-EN.pdf" target="_black" class="btn btn-primary">Read more...</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="row watch-video text-center to-animate">
+				<span>Ingeniero de desarrollo de la universidad del Valle, con conocimientos en lenguajes de programación con el paradigma POO (programación orientada a objetos) enfocados en desarrollo de aplicaciones.</span>
+			</div>
+		</div>
+	</section>
+	
+	<section id="fh5co-work" data-section="work">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Angular</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Desarrollo de aplicaciones con Angular y sus diferentes componentes aplicando estilos con Boostrap y Angular Material.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-md-offset-2 col-sm-6 col-xxs-12">
+					<a href="https://betancourtyeison.github.io/angular-fireadmin/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/angular-fire.jpg" alt="Angular Firebase" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Angular-Firebase</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="https://betancourtYeison.github.io/angular-admin/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/angular-admin.jpg" alt="Angular Admin" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Angular-Apps</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Vue</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Desarrollo de aplicaciones con Vue y sus diferentes componentes aplicando estilos con Vuetifyjs.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-md-offset-2 col-sm-6 col-xxs-12">
+					<a href="https://vue-firebase-2c9bf.firebaseapp.com/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/vue-firebase.jpg" alt="Vue Firebase" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Vue-Firebase</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="https://betancourtyeison.github.io/vue-chat/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/vue-chat.jpg" alt="Vue Chat" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Vue-Chat</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">React</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Desarrollo de aplicaciones con React y Redux.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="https://betancourtyeison.github.io/weather-app/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/weather-app.jpg" alt="Weather App React" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Clima</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="https://betancourtyeison.github.io/api-youtube-react/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/api-youtube-react.jpg" alt="Api Youtube React" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Api Youtube</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="https://betancourtyeison.github.io/customers-app/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/customers-app.jpg" alt="Customers App React" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>CRUD de Clientes</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Angular JS</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Desarrollo de aplicaciones con AngularJS y sus diferentes componentes aplicando estilos con Boostrap.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://betancourtyeison.github.io/angularJS/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/angular-JS.jpg" alt="Angular JS" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Desarrollo Web con AngularJS</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://betancourtyeison.github.io/registradorVentas-frontend/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/sell-register.jpg" alt="Api Youtube React" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Registrador de Ventas con AngularJS</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://betancourtyeison.github.io/uniflix-frontend/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/shop-multimedia.jpg" alt="Tienda Multimedia" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Tienda Multimedia con AngularJS</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">HTML JavaScript CSS3</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Desarrollo de aplicaciones con HTML JavaScript CSS3.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://betancourtyeison.github.io/juegos/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/games.jpg" alt="Juegos" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Juegos con JS</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://betancourtyeison.github.io/busquedaArtistas/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/artists.jpg" alt="Desarrollo Web con Ajax last.fm/api" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Desarrollo Web con Ajax last.fm/api</h2>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://betancourtyeison.github.io/blogPuls2015/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/puls.jpg" alt="Desarrollo Web con JQuery" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Desarrollo Web con JQuery</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">CMS</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Desarrollo de aplicaciones con Frameworks como Joomla y WordPress.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-md-offset-2 col-sm-6 col-xxs-12">
+						<a href="http://refrastrabe.com/" target="_black" class="fh5co-project-item to-animate">
+							<img src="images/refrastrabe.jpg" alt="Refrastrabe S.A" class="img-responsive">
+							<div class="fh5co-text">
+							<h2>DesEmpresa Refrastrabe S.A</h2>
+							</div>
+						</a>
+					</div>
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="http://refratek.com/" target="_black" class="fh5co-project-item to-animate">
+						<img src="images/refratek.jpg" alt="Refratek S.A" class="img-responsive">
+						<div class="fh5co-text">
+						<h2>Empresa Refratek S.A</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-about" data-section="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Acerca de</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="fh5co-person text-center to-animate">
+						<figure><img src="images/person.jpg" alt="Yeison Betancourt Solis"></figure>
+						<h3>Yeison Betancourt Solis</h3>
+						<span class="fh5co-position">Ingeniero de Desarrollo</span>
+						<p>Poseo habilidades para el trabajo cooperativo y en equipo, Soy proactivo, responsable y con capacidad de rápido aprendizaje. Con interés para desempeñarme en el desarrollo de aplicaciones web, móvil y la dirección de proyectos.</p>
+						<ul class="social social-circle">
+							<li><a href="https://github.com/betancourtYeison" target="_black"><i class="icon-github-square"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/betancourtyeison/" target="_black"><i class="icon-linkedin"></i></a></li>
+							<li><a href="http://www.facebook.com/betancourtYeison" target="_black"><i class="icon-facebook-square"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="fh5co-counters" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="fh5co-overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-briefcase to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="49" data-speed="5000" data-refresh-interval="50">49</span>
+						<span class="fh5co-counter-label">Proyectos Terminados</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-code to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="3042818" data-speed="5000" data-refresh-interval="50">3042818</span>
+						<span class="fh5co-counter-label">Lineas de código</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-cup to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="1004" data-speed="5000" data-refresh-interval="50">1004</span>
+						<span class="fh5co-counter-label">Tazas de cafe</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-contact" data-section="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Estar en contacto</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Si deseas más información puedes contactarme</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-md">
+				<div class="col-md-4 col-md-offset-4 to-animate">
+					<h3>Contact Info</h3>
+					<ul class="fh5co-contact-info">
+						<li class="fh5co-contact-address ">
+							<i class="icon-home"></i>
+							Calle 15 # 53-125, <br>Torre G Apto 502
+						</li>
+						<li><i class="icon-phone"></i> +(57) 316 279 3738</li>
+						<li><i class="icon-envelope"></i>yeisonbe10@hotmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer" role="contentinfo">
+		<a href="#" class="gotop js-gotop"><i class="icon-arrow-up2"></i></a>
+		<div class="container">
+			<div class="">
+				<div class="col-md-12 text-center">
+					<p>&copy; betancourtyeison.github.io 2019. <br>Creado por Yeison Betancourt Solis</p>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="social social-circle">
+							<li><a href="https://github.com/betancourtYeison" target="_black"><i class="icon-github-square"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/betancourtyeison/" target="_black"><i class="icon-linkedin"></i></a></li>
+							<li><a href="http://www.facebook.com/betancourtYeison" target="_black"><i class="icon-facebook-square"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Counter -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	</body>
 </html>
+
