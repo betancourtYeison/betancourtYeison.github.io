@@ -1,6 +1,6 @@
 @import "../../_globalColor";
 
-.card-image {
+.project-card-image {
   max-width: 100%;
   height: auto;
   width: 250px;
@@ -83,6 +83,14 @@
 }
 
 @media (max-width: 768px) {
+  .project-image {
+    display: none;
+  }
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem 1rem;
+  }
   .project-subtitle {
     font-size: 16px;
     text-align: center;

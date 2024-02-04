@@ -1,6 +1,6 @@
 @import "../../_globalColor";
 
-.card-image {
+.achievement-card-image {
   max-width: 100%;
   height: auto;
   width: 250px;
@@ -74,4 +74,10 @@
 }
 span.certificate-tag:hover {
   background: $buttonHover;
+}
+
+@media (max-width: 768px) {
+  .certificate-image-div {
+    display: none;
+  }
 }

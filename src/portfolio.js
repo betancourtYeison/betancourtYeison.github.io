@@ -248,7 +248,7 @@ const bigProjects = {
       image: require("./assets/images/gideonsLogo.png"),
       projectName: "The Gideons International",
       projectDesc:
-        "I played a key role in developing the Gideon Bible app, providing free access to Scripture in multiple languages. The app includes audio, facilitating sharing in various languages, with easy search.",
+        "I played a key role in developing the Gideon Bible app, offering free access to Scripture in multiple languages. The app provides adapted excerpts and audio for reading and listening, facilitating sharing in various languages. Users can easily search for Bibles by language or country, with versatile language options for a diverse and accessible experience",
       footerLink: [
         {
           name: "Visit Website",
@@ -261,7 +261,7 @@ const bigProjects = {
       image: require("./assets/images/scoutIQLogo.png"),
       projectName: "ScoutIQ",
       projectDesc:
-        "I contributed to developing ScoutIQ, a dynamic retail arbitrage software for Amazon sellers, featuring innovative Team Mode for efficient collaboration and productivity.",
+        "I contributed to ScoutIQ's development, a dynamic retail arbitrage software for Amazon sellers. The innovative Team Mode enables efficient team management through a web portal, fostering collaboration and productivity in finding profitable opportunities.",
       footerLink: [
         {
           name: "Visit Website",
@@ -274,7 +274,7 @@ const bigProjects = {
       image: require("./assets/images/monettaLogo.png"),
       projectName: "Monetta",
       projectDesc:
-        "I led the development of an advanced digital wallet, seamlessly integrating Polygon and blockchain for effortless transactions and global usability. Project includes Android, iOS apps, and robust CMS.",
+        "I led the development of an advanced digital wallet with a proprietary token, seamlessly integrating Polygon and blockchain. This empowers users for effortless transactions, limitless currency conversions, and global usability. The project includes Android and iOS apps and a robust CMS for comprehensive functionality.",
       footerLink: [
         {
           name: "Visit Website",
@@ -287,7 +287,7 @@ const bigProjects = {
       image: require("./assets/images/obtenMasLogo.png"),
       projectName: "ObtenMás",
       projectDesc:
-        "I contributed to Obtén Más, a user-friendly digital wallet consolidating voucher and social program cards. Effortlessly add beneficiaries, make 100% digital QR payments, and manage expenses",
+        "I contributed to Obtén Más, a user-friendly digital wallet consolidating voucher and social program cards. Effortlessly add beneficiaries, make 100% digital QR payments, and seamlessly track and manage expenses",
       footerLink: [
         {
           name: "Visit Website",
@@ -299,7 +299,7 @@ const bigProjects = {
       image: require("./assets/images/daviviendaLogo.png"),
       projectName: "Davivienda CMS",
       projectDesc:
-        "As a developer at Davivienda, I contributed to innovative solutions, including a proprietary CMS for efficient geolocation management on a customer-facing map, to discover offices, ATMs, and more.",
+        "As a developer at Davivienda, I contributed to innovative solutions, including a proprietary CMS for efficient geolocation management on a customer-facing map, simplifying the discovery of offices, ATMs, and more.",
       footerLink: [
         {
           name: "Visit Website",
@@ -311,7 +311,7 @@ const bigProjects = {
       image: require("./assets/images/daviviendaLogo.png"),
       projectName: "Davivienda Map",
       projectDesc:
-        "As a developer at Davivienda, I played a key role in creating a map for customers, aiding in locating, ATMs, and services with detailed information on services, operating hours, and directions.",
+        "In my role as a developer at Davivienda, I was instrumental in creating a comprehensive map for Davivienda to aid bank customers in locating branches, ATMs, and other essential services, providing detailed information on services, operating hours, and directions to each designated location.",
       footerLink: [
         {
           name: "Visit Website",
@@ -323,7 +323,7 @@ const bigProjects = {
       image: require("./assets/images/daviplataLogo.png"),
       projectName: "Daviplata Map",
       projectDesc:
-        "As a developer at Daviplata, I played a key role in developing a map feature for the digital wallet, facilitating users to find points for cash transactions, product purchases, and QR payments.",
+        "In my role as a developer at Daviplata, I played a key role in developing a map feature for the Daviplata digital wallet, enabling users to easily find points for cash transactions, product purchases, and QR-based payments.",
       footerLink: [
         {
           name: "Visit Website",
@@ -335,7 +335,7 @@ const bigProjects = {
       image: require("./assets/images/owoLogo.png"),
       projectName: "OWO App",
       projectDesc:
-        "I contributed to OWO's development, a mobile app revolutionizing recharge and collection. Users can conveniently top up balances through PSE or at 10,000+ physical points nationwide.",
+        "I contributed to the development of OWO, a mobile application revolutionizing recharge and collection processes. Users can conveniently top up their balance through PSE or at over 10,000 physical points across our nationwide network of partners. Offering seamless mobile recharges for any telecom operator in Colombia, the app provides a diverse range of tailored packages.",
       footerLink: [
         {
           name: "Visit Website",
@@ -347,7 +347,7 @@ const bigProjects = {
       image: require("./assets/images/rsalesLogo.png"),
       projectName: "R-Sales",
       projectDesc:
-        "As a key contributor, I played a pivotal role in developing an Android app and CMS",
+        "As a key contributor to the company, I played a pivotal role in the development of an Android application and CMS. The CMS effectively configures diverse functionalities within the application, enabling precise parameterization of its usage. This dynamic application serves as a robust tool for managing field workers, facilitating real-time monitoring of routes, tracking orders, and seamlessly managing the schedules and agendas of the workforce.",
       footerLink: [
         {
           name: "Visit Website",
