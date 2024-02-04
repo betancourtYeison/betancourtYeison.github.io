@@ -248,7 +248,7 @@ const bigProjects = {
       image: require("./assets/images/gideonsLogo.png"),
       projectName: "The Gideons International",
       projectDesc:
-        "I have played a key role in the development of the Gideon Bible application, providing access to Scriptures in various languages. The app includes excerpts and audio adapted for reading and listening to the Bible in your own language. It offers the Holy Bible for free, enabling the sharing of the word of God in numerous languages, and facilitates the search for Bibles by language or country. With options in Arabic, Chinese, English, French, Spanish, Portuguese, Russian, Vietnamese, Farsi/Persian, Danish, Hebrew, Indonesian, Italian, Korean, Thai, and many more, the application provides a versatile and accessible experience.",
+        "I played a key role in developing the Gideon Bible app, providing free access to Scripture in multiple languages. The app includes audio, facilitating sharing in various languages, with easy search.",
       footerLink: [
         {
           name: "Visit Website",
@@ -261,7 +261,7 @@ const bigProjects = {
       image: require("./assets/images/scoutIQLogo.png"),
       projectName: "ScoutIQ",
       projectDesc:
-        "I contributed to the development of ScoutIQ, a dynamic retail arbitrage software designed to expedite the process of discovering lucrative products for Amazon sellers. The innovative Team Mode feature allows users to efficiently recruit and manage a team of scouts seamlessly through the web portal, enhancing collaboration and productivity in the pursuit of profitable opportunities.",
+        "I contributed to developing ScoutIQ, a dynamic retail arbitrage software for Amazon sellers, featuring innovative Team Mode for efficient collaboration and productivity.",
       footerLink: [
         {
           name: "Visit Website",
@@ -274,7 +274,7 @@ const bigProjects = {
       image: require("./assets/images/monettaLogo.png"),
       projectName: "Monetta",
       projectDesc:
-        "I spearheaded the development of a cutting-edge digital wallet featuring a proprietary token, seamlessly integrating Polygon and blockchain technologies. This innovative solution empowers users with the ability to effortlessly conduct transactions, make purchases, recharge funds, send money, and convert currencies limitlessly, ensuring global usability. The project encompassed the creation of Android and iOS applications, along with a robust CMS platform for comprehensive functionality.",
+        "I led the development of an advanced digital wallet, seamlessly integrating Polygon and blockchain for effortless transactions and global usability. Project includes Android, iOS apps, and robust CMS.",
       footerLink: [
         {
           name: "Visit Website",
@@ -287,7 +287,7 @@ const bigProjects = {
       image: require("./assets/images/obtenMasLogo.png"),
       projectName: "ObtenMás",
       projectDesc:
-        "I contributed to the development of Obtén Más, the most user-friendly digital wallet that consolidates all your voucher and social program cards in one application. With it, you can effortlessly add beneficiaries, make 100% digital purchases and payments with QR codes, track and manage your expenses seamlessly",
+        "I contributed to Obtén Más, a user-friendly digital wallet consolidating voucher and social program cards. Effortlessly add beneficiaries, make 100% digital QR payments, and manage expenses",
       footerLink: [
         {
           name: "Visit Website",
@@ -299,7 +299,7 @@ const bigProjects = {
       image: require("./assets/images/daviviendaLogo.png"),
       projectName: "Davivienda CMS",
       projectDesc:
-        "In my role as a developer at Davivienda, I contributed to the creation of innovative solutions. This involved designing and implementing a proprietary CMS for efficient management of geolocation points on a customer-facing map, simplifying the discovery of offices, ATMs, and more. Additionally",
+        "As a developer at Davivienda, I contributed to innovative solutions, including a proprietary CMS for efficient geolocation management on a customer-facing map, to discover offices, ATMs, and more.",
       footerLink: [
         {
           name: "Visit Website",
@@ -311,7 +311,7 @@ const bigProjects = {
       image: require("./assets/images/daviviendaLogo.png"),
       projectName: "Davivienda Map",
       projectDesc:
-        "In my role as a developer at Davivienda, I was instrumental in creating a comprehensive map for Davivienda to aid bank customers in locating branches, ATMs, and other essential services, providing detailed information on services, operating hours, and directions to each designated location.",
+        "As a developer at Davivienda, I played a key role in creating a map for customers, aiding in locating, ATMs, and services with detailed information on services, operating hours, and directions.",
       footerLink: [
         {
           name: "Visit Website",
@@ -323,7 +323,7 @@ const bigProjects = {
       image: require("./assets/images/daviplataLogo.png"),
       projectName: "Daviplata Map",
       projectDesc:
-        "In my role as a developer at Daviplata, I played a key role in developing a map feature for the Daviplata digital wallet, enabling users to easily find points for cash transactions, product purchases, and QR-based payments.",
+        "As a developer at Daviplata, I played a key role in developing a map feature for the digital wallet, facilitating users to find points for cash transactions, product purchases, and QR payments.",
       footerLink: [
         {
           name: "Visit Website",
@@ -335,7 +335,7 @@ const bigProjects = {
       image: require("./assets/images/owoLogo.png"),
       projectName: "OWO App",
       projectDesc:
-        "I contributed to the development of OWO, a mobile application revolutionizing recharge and collection processes. Users can conveniently top up their balance through PSE or at over 10,000 physical points across our nationwide network of partners. Offering seamless mobile recharges for any telecom operator in Colombia, the app provides a diverse range of tailored packages.",
+        "I contributed to OWO's development, a mobile app revolutionizing recharge and collection. Users can conveniently top up balances through PSE or at 10,000+ physical points nationwide.",
       footerLink: [
         {
           name: "Visit Website",
@@ -347,7 +347,7 @@ const bigProjects = {
       image: require("./assets/images/rsalesLogo.png"),
       projectName: "R-Sales",
       projectDesc:
-        "As a key contributor to the company, I played a pivotal role in the development of an Android application and CMS. The CMS effectively configures diverse functionalities within the application, enabling precise parameterization of its usage. This dynamic application serves as a robust tool for managing field workers, facilitating real-time monitoring of routes, tracking orders, and seamlessly managing the schedules and agendas of the workforce.",
+        "As a key contributor, I played a pivotal role in developing an Android app and CMS",
       footerLink: [
         {
           name: "Visit Website",
@@ -510,7 +510,7 @@ const blogSection = {
   title: "Blogs",
   subtitle:
     "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
       url: "https://www.fullstacklabs.co/blog/airbnbs-lottie-library-adobe-after-effects-animations-and-react-native",
@@ -519,7 +519,7 @@ const blogSection = {
         "Explore an easy-to-follow tutorial for crafting a React Native application enriched with animations, leveraging third-party libraries like Lottie."
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
