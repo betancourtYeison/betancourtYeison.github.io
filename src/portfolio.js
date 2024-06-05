@@ -388,6 +388,10 @@ const achievementSection = {
         {
           name: "Master CI/CD",
           url: require("./assets/resources/udemy/masterCICDCertified.pdf")
+        },
+        {
+          name: "PHP from Scratch",
+          url: require("./assets/resources/udemy/phpFromScratchCertified.pdf")
         }
       ]
     },
