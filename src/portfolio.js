@@ -374,8 +374,16 @@ const achievementSection = {
       imageAlt: "Certifications Udemy",
       footerLink: [
         {
+          name: "Unity Video Games",
+          url: require("./assets/resources/udemy/unityCertified.pdf")
+        },
+        {
           name: "PHP from Scratch",
           url: require("./assets/resources/udemy/phpFromScratchCertified.pdf")
+        },
+        {
+          name: "Angular Master",
+          url: require("./assets/resources/udemy/angular15Certified.pdf")
         },
         {
           name: "React Developer",
