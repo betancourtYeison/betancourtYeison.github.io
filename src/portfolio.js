@@ -374,6 +374,10 @@ const achievementSection = {
       imageAlt: "Certifications Udemy",
       footerLink: [
         {
+          name: "Angular Deep Dive 18",
+          url: require("./assets/resources/udemy/angularDeepDive18Certified.pdf")
+        },
+        {
           name: "Unity Video Games",
           url: require("./assets/resources/udemy/unityCertified.pdf")
         },
