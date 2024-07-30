@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.88702aae.css",
-    "main.js": "/static/js/main.2f9ca4e9.js",
+    "main.js": "/static/js/main.894f7a33.js",
     "static/css/136.169c4389.chunk.css": "/static/css/136.169c4389.chunk.css",
     "static/js/136.d2609413.chunk.js": "/static/js/136.d2609413.chunk.js",
     "static/css/380.bc6f4c18.chunk.css": "/static/css/380.bc6f4c18.chunk.css",
@@ -14,6 +14,7 @@
     "static/media/unityCertified.pdf": "/static/media/unityCertified.6a1d023e79a3a0311d71.pdf",
     "static/media/angular15Certified.pdf": "/static/media/angular15Certified.e7119388361f8cf0f69c.pdf",
     "static/media/reactDeveloperCertified.pdf": "/static/media/reactDeveloperCertified.0a46d36a86c71280eabf.pdf",
+    "static/media/angularDeepDive18Certified.pdf": "/static/media/angularDeepDive18Certified.e5629bfd4f5fcf7e350a.pdf",
     "static/media/leadershipCertified.pdf": "/static/media/leadershipCertified.1901eff6209d31be8e73.pdf",
     "static/media/phpFromScratchCertified.pdf": "/static/media/phpFromScratchCertified.bfa7a3a9c5b3495cdb8c.pdf",
     "static/media/practicalLeadershipSkillsCertified.pdf": "/static/media/practicalLeadershipSkillsCertified.8ea8784adb29e79aae86.pdf",
@@ -52,7 +53,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.88702aae.css.map": "/static/css/main.88702aae.css.map",
-    "main.2f9ca4e9.js.map": "/static/js/main.2f9ca4e9.js.map",
+    "main.894f7a33.js.map": "/static/js/main.894f7a33.js.map",
     "136.169c4389.chunk.css.map": "/static/css/136.169c4389.chunk.css.map",
     "136.d2609413.chunk.js.map": "/static/js/136.d2609413.chunk.js.map",
     "380.bc6f4c18.chunk.css.map": "/static/css/380.bc6f4c18.chunk.css.map",
@@ -60,6 +61,6 @@
   },
   "entrypoints": [
     "static/css/main.88702aae.css",
-    "static/js/main.2f9ca4e9.js"
+    "static/js/main.894f7a33.js"
   ]
 }
