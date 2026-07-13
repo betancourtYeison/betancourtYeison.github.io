@@ -13,7 +13,7 @@ export default function Footer() {
           {emoji("Made with ❤️ by Yeison Betancourt Solis")}
         </p>
         <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          Copyright 2024
+          Copyright 2026
         </p>
       </div>
     </Fade>

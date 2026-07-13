@@ -23,7 +23,7 @@ const greeting = {
   username: "betancourtYeison",
   title: "Hi all, I'm Yeison",
   subTitle: emoji(
-    "Experienced Senior Developer  with over eight years of expertise in crafting innovative Web and Mobile applications using JavaScript, React.js, Node.js, React Native, and various other cutting-edge libraries and frameworks. Blending solid academic foundation with proactive collaboration in multifunctional teams. Adaptable and quick learner, I thrive on overcoming challenges. Eager to contribute technical expertise and leadership to drive success and innovation in projects. 🚀"
+    "Experienced Senior Developer  with over nine years of expertise in crafting innovative Web and Mobile applications using JavaScript, TypeScript, React.js, Node.js, React Native, and various other cutting-edge libraries and frameworks. Blending solid academic foundation with proactive collaboration in multifunctional teams. Adaptable and quick learner, I thrive on overcoming challenges. Eager to contribute technical expertise and leadership to drive success and innovation in projects. 🚀"
   ),
   resumeLink: require("./assets/cv/CV-YeisonBetancourtSolis-EN.pdf"), // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -86,11 +86,19 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-js"
     },
     {
+      skillName: "TypeScript",
+      fontAwesomeClassname: "fab fa-js"
+    },
+    {
       skillName: "React Native",
       fontAwesomeClassname: "fab fa-react"
     },
     {
       skillName: "ReactJS",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
+      skillName: "Next.js",
       fontAwesomeClassname: "fab fa-react"
     },
     {
@@ -102,8 +110,20 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-vuejs"
     },
     {
+      skillName: "Flutter",
+      fontAwesomeClassname: "fas fa-mobile-alt"
+    },
+    {
       skillName: "NodeJS",
       fontAwesomeClassname: "fab fa-node"
+    },
+    {
+      skillName: "Nest.js",
+      fontAwesomeClassname: "fab fa-node"
+    },
+    {
+      skillName: "GraphQL",
+      fontAwesomeClassname: "fas fa-project-diagram"
     },
     {
       skillName: "PHP",
@@ -200,11 +220,18 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
+      role: "Senior Software Engineer",
+      company: "Fullstack Labs",
+      companylogo: require("./assets/images/fullstacklabsWhiteLogo.png"),
+      date: "August 2021 – Present",
+      desc: "As an experienced developer, I emphasize my pivotal role in international web and mobile projects. I specialize in innovating the Backend, optimizing efficiency to meet the needs of global clients. In mobile applications, I lead the development of advanced features to ensure engaging and functional experiences. My expertise includes the integration of advanced technologies, keeping applications aligned with the latest trends. Additionally, I have successfully implemented CI/CD through AppCenter, ensuring efficiency in software delivery. My proficiency extends to expert migrations, showcasing advanced technical skills and the ability to manage changes seamlessly."
+    },
+    {
       role: "Software Engineer",
       company: "Fullstack Labs",
       companylogo: require("./assets/images/fullstacklabsWhiteLogo.png"),
-      date: "September 2019 – Present",
-      desc: "As an experienced developer, I emphasize my pivotal role in international web and mobile projects. I specialize in innovating the Backend, optimizing efficiency to meet the needs of global clients. In mobile applications, I lead the development of advanced features to ensure engaging and functional experiences. My expertise includes the integration of advanced technologies, keeping applications aligned with the latest trends. Additionally, I have successfully implemented CI/CD through AppCenter, ensuring efficiency in software delivery. My proficiency extends to expert migrations, showcasing advanced technical skills and the ability to manage changes seamlessly."
+      date: "September 2019 – August 2021",
+      desc: "As a passionate application developer, I took pride in highlighting my key contributions to internationally-focused web and mobile projects, led the development of solutions for global clients, optimized CMS functionality on an international scale, and enriched mobile application experiences for diverse and culturally varied audiences."
     },
     {
       role: "Development Engineer",
