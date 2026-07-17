@@ -81,6 +81,10 @@ user confirmation** — it force-pushes to `master`, a shared/public branch.
 
 ## Known state / tech debt (as of 2026-07)
 
+The full modernization roadmap (stack migration, redesign, CI/CD, etc.)
+lives in [docs/PLAN-MEJORAS.md](docs/PLAN-MEJORAS.md) — consult it before
+starting improvement work so changes follow the agreed phases.
+
 - **CRA (react-scripts 5) is deprecated upstream.** React, react-dom, and
   react-test-renderer are pinned to 16.10.2 (current stable is 19.x). A
   migration to Vite (or Next.js) + React 19 is the main modernization
