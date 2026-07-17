@@ -13,7 +13,6 @@ import Talks from "./talks/Talks";
 import Podcast from "./podcast/Podcast";
 import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
-import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
@@ -61,7 +60,6 @@ const Main = () => {
             <Achievement />
             <Blogs />
             <Talks />
-            <Twitter />
             <Podcast />
             <Profile />
             <Footer />

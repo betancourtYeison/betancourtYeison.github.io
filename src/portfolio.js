@@ -2,7 +2,6 @@
 
 // To change portfolio colors globally go to the  _globalColor.scss file
 
-import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
 // Splash Screen
@@ -22,9 +21,8 @@ const illustration = {
 const greeting = {
   username: "betancourtYeison",
   title: "Hi all, I'm Yeison",
-  subTitle: emoji(
-    "Experienced Senior Developer  with over nine years of expertise in crafting innovative Web and Mobile applications using JavaScript, TypeScript, React.js, Node.js, React Native, and various other cutting-edge libraries and frameworks. Blending solid academic foundation with proactive collaboration in multifunctional teams. Adaptable and quick learner, I thrive on overcoming challenges. Eager to contribute technical expertise and leadership to drive success and innovation in projects. 🚀"
-  ),
+  subTitle:
+    "Experienced Senior Developer  with over nine years of expertise in crafting innovative Web and Mobile applications using JavaScript, TypeScript, React.js, Node.js, React Native, and various other cutting-edge libraries and frameworks. Blending solid academic foundation with proactive collaboration in multifunctional teams. Adaptable and quick learner, I thrive on overcoming challenges. Eager to contribute technical expertise and leadership to drive success and innovation in projects. 🚀",
   resumeLink: require("./assets/cv/CV-YeisonBetancourtSolis-EN.pdf"), // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
@@ -54,15 +52,9 @@ const skillsSection = {
   subTitle:
     "DYNAMIC FULL STACK DEVELOPER 🚀 WITH A HUNGER TO EXPLORE EVERY TECH STACKS",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji(
-      "⚡ Implement efficient backend solutions for robust system architecture and data management"
-    ),
-    emoji(
-      "⚡ Integration of third party services such as AWS / Firebase / Stripe"
-    )
+    "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
+    "⚡ Implement efficient backend solutions for robust system architecture and data management",
+    "⚡ Integration of third party services such as AWS / Firebase / Stripe"
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -390,7 +382,7 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
+  title: "Achievements And Certifications 🏆 ",
   subtitle:
     "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
   achievementsCards: [
@@ -569,47 +561,28 @@ const blogSection = {
 
 const talkSection = {
   title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
-  talks: [
-    {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/betancourtYeison-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
-    }
-  ],
+  subtitle: "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅",
+  talks: [],
   display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
 
 const podcastSection = {
-  title: emoji("Podcast 🎙️"),
+  title: "Podcast 🎙️",
   subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
 
   // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
+  podcast: [],
   display: false // Set false to hide this section, defaults to true
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: "Contact Me ☎️",
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "+57-3162793738",
   email_address: "yeisonbe10@hotmail.com"
-};
-
-// Twitter Section
-
-const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
@@ -630,6 +603,5 @@ export {
   talkSection,
   podcastSection,
   contactInfo,
-  twitterDetails,
   isHireable
 };

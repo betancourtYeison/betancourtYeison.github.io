@@ -1,6 +1,4 @@
-fs = require("fs");
-const https = require("https");
-process = require("process");
+const fs = require("fs");
 require("dotenv").config();
 
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
@@ -8,24 +6,24 @@ const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
 const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
 
-const ERR = {
-  noUserName:
-    "Github Username was found to be undefined. Please set all relevant environment variables.",
-  requestFailed:
-    "The request to GitHub didn't succeed. Check if GitHub token in your .env file is correct.",
-  requestFailedMedium:
-    "The request to Medium didn't succeed. Check if Medium username in your .env file is correct."
-};
-if (USE_GITHUB_DATA === "true") {
-  if (GITHUB_USERNAME === undefined) {
-    throw new Error(ERR.noUserName);
+// Fetch failures are logged but never fail the build: the site falls
+// back to the hardcoded data in src/portfolio.js when the JSON files
+// are missing.
+async function fetchGithubProfile() {
+  if (USE_GITHUB_DATA !== "true") {
+    return;
+  }
+  if (!GITHUB_USERNAME) {
+    console.warn(
+      "USE_GITHUB_DATA is true but GITHUB_USERNAME is not set — skipping GitHub fetch."
+    );
+    return;
   }
 
   console.log(`Fetching profile data for ${GITHUB_USERNAME}`);
-  var data = JSON.stringify({
-    query: `
+  const query = `
 {
-  user(login:"${GITHUB_USERNAME}") { 
+  user(login:"${GITHUB_USERNAME}") {
     name
     bio
     avatarUrl
@@ -33,98 +31,75 @@ if (USE_GITHUB_DATA === "true") {
     pinnedItems(first: 6, types: [REPOSITORY]) {
       totalCount
       edges {
-          node {
-            ... on Repository {
+        node {
+          ... on Repository {
+            name
+            description
+            forkCount
+            stargazers {
+              totalCount
+            }
+            url
+            id
+            diskUsage
+            primaryLanguage {
               name
-              description
-              forkCount
-              stargazers {
-                totalCount
-              }
-              url
-              id
-              diskUsage
-              primaryLanguage {
-                name
-                color
-              }
+              color
             }
           }
         }
       }
     }
+  }
 }
-`
-  });
-  const default_options = {
-    hostname: "api.github.com",
-    path: "/graphql",
-    port: 443,
+`;
+
+  const res = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${GITHUB_TOKEN}`,
       "User-Agent": "Node"
-    }
-  };
-
-  const req = https.request(default_options, res => {
-    let data = "";
-
-    console.log(`statusCode: ${res.statusCode}`);
-    if (res.statusCode !== 200) {
-      throw new Error(ERR.requestFailed);
-    }
-
-    res.on("data", d => {
-      data += d;
-    });
-    res.on("end", () => {
-      fs.writeFile("./public/profile.json", data, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to public/profile.json");
-      });
-    });
+    },
+    body: JSON.stringify({query})
   });
-
-  req.on("error", error => {
-    throw error;
-  });
-
-  req.write(data);
-  req.end();
+  if (!res.ok) {
+    throw new Error(
+      `GitHub request failed with status ${res.status}. Check REACT_APP_GITHUB_TOKEN in your .env file.`
+    );
+  }
+  const data = await res.text();
+  fs.writeFileSync("./public/profile.json", data);
+  console.log("saved file to public/profile.json");
 }
 
-if (MEDIUM_USERNAME !== undefined) {
+async function fetchMediumBlogs() {
+  if (!MEDIUM_USERNAME) {
+    return;
+  }
+
   console.log(`Fetching Medium blogs data for ${MEDIUM_USERNAME}`);
-  const options = {
-    hostname: "api.rss2json.com",
-    path: `/v1/api.json?rss_url=https://medium.com/feed/@${MEDIUM_USERNAME}`,
-    port: 443,
-    method: "GET"
-  };
-
-  const req = https.request(options, res => {
-    let mediumData = "";
-
-    console.log(`statusCode: ${res.statusCode}`);
-    if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
-    }
-
-    res.on("data", d => {
-      mediumData += d;
-    });
-    res.on("end", () => {
-      fs.writeFile("./public/blogs.json", mediumData, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to public/blogs.json");
-      });
-    });
-  });
-
-  req.on("error", error => {
-    throw error;
-  });
-
-  req.end();
+  const res = await fetch(
+    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${MEDIUM_USERNAME}`
+  );
+  if (!res.ok) {
+    throw new Error(
+      `Medium request failed with status ${res.status}. Check MEDIUM_USERNAME in your .env file.`
+    );
+  }
+  const data = await res.text();
+  fs.writeFileSync("./public/blogs.json", data);
+  console.log("saved file to public/blogs.json");
 }
+
+(async () => {
+  const results = await Promise.allSettled([
+    fetchGithubProfile(),
+    fetchMediumBlogs()
+  ]);
+  for (const result of results) {
+    if (result.status === "rejected") {
+      console.warn(`WARNING: ${result.reason.message}`);
+      console.warn("Continuing build with fallback data from portfolio.js.");
+    }
+  }
+})();
