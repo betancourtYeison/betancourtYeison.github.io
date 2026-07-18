@@ -31,7 +31,7 @@ const greeting = {
   username: "betancourtYeison",
   title: "Hi all, I'm Yeison",
   subTitle:
-    "Experienced Senior Developer  with over nine years of expertise in crafting innovative Web and Mobile applications using JavaScript, TypeScript, React.js, Node.js, React Native, and various other cutting-edge libraries and frameworks. Blending solid academic foundation with proactive collaboration in multifunctional teams. Adaptable and quick learner, I thrive on overcoming challenges. Eager to contribute technical expertise and leadership to drive success and innovation in projects. 🚀",
+    "Senior Software Engineer with 9+ years building web and mobile applications with JavaScript, TypeScript, React, React Native and Node.js. I lead features end to end for international clients and enjoy turning complex problems into simple, polished products. 🚀",
   resumeLink: asset("./assets/cv/CV-YeisonBetancourtSolis-EN.pdf"), // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
@@ -66,105 +66,51 @@ const skillsSection = {
     "⚡ Integration of third party services such as AWS / Firebase / Stripe"
   ],
 
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
+  /* `icon` keys map to react-icons components in
+     src/components/softwareSkills/SoftwareSkill.jsx — add new entries there */
 
   softwareSkills: [
     {
-      skillName: "HTML-5",
-      fontAwesomeClassname: "fab fa-html5"
+      category: "Frontend",
+      skills: [
+        {skillName: "HTML5", icon: "html5"},
+        {skillName: "CSS3", icon: "css"},
+        {skillName: "Sass", icon: "sass"},
+        {skillName: "JavaScript", icon: "javascript"},
+        {skillName: "TypeScript", icon: "typescript"},
+        {skillName: "React", icon: "react"},
+        {skillName: "Next.js", icon: "nextjs"},
+        {skillName: "Angular", icon: "angular"},
+        {skillName: "Vue.js", icon: "vuejs"}
+      ]
     },
     {
-      skillName: "CSS3",
-      fontAwesomeClassname: "fab fa-css3-alt"
+      category: "Mobile",
+      skills: [
+        {skillName: "React Native", icon: "react"},
+        {skillName: "Flutter", icon: "flutter"}
+      ]
     },
     {
-      skillName: "SASS",
-      fontAwesomeClassname: "fab fa-sass"
+      category: "Backend",
+      skills: [
+        {skillName: "Node.js", icon: "nodejs"},
+        {skillName: "NestJS", icon: "nestjs"},
+        {skillName: "GraphQL", icon: "graphql"},
+        {skillName: "PHP", icon: "php"},
+        {skillName: "Python", icon: "python"}
+      ]
     },
     {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "TypeScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "React Native",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "ReactJS",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "Next.js",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "Angular",
-      fontAwesomeClassname: "fab fa-angular"
-    },
-    {
-      skillName: "VueJS",
-      fontAwesomeClassname: "fab fa-vuejs"
-    },
-    {
-      skillName: "Flutter",
-      fontAwesomeClassname: "fas fa-mobile-alt"
-    },
-    {
-      skillName: "NodeJS",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "Nest.js",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "GraphQL",
-      fontAwesomeClassname: "fas fa-project-diagram"
-    },
-    {
-      skillName: "PHP",
-      fontAwesomeClassname: "fab fa-php"
-    },
-    {
-      skillName: "Git",
-      fontAwesomeClassname: "fab fa-git"
-    },
-    {
-      skillName: "GitHub",
-      fontAwesomeClassname: "fab fa-github"
-    },
-    {
-      skillName: "Bitbucket",
-      fontAwesomeClassname: "fab fa-bitbucket"
-    },
-    {
-      skillName: "YARN",
-      fontAwesomeClassname: "fab fa-yarn"
-    },
-    {
-      skillName: "NPM",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "AWS",
-      fontAwesomeClassname: "fab fa-aws"
-    },
-    {
-      skillName: "Firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "Python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "Docker",
-      fontAwesomeClassname: "fab fa-docker"
+      category: "Cloud & DevOps",
+      skills: [
+        {skillName: "AWS", icon: "aws"},
+        {skillName: "Firebase", icon: "firebase"},
+        {skillName: "Docker", icon: "docker"},
+        {skillName: "Git", icon: "git"},
+        {skillName: "GitHub", icon: "github"},
+        {skillName: "Bitbucket", icon: "bitbucket"}
+      ]
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -197,7 +143,7 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: false, // Hidden: percentage bars read as arbitrary — stack chips per role tell more (Fase 3)
   experience: [
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
@@ -225,6 +171,19 @@ const workExperiences = {
       company: "Fullstack Labs",
       companylogo: asset("./assets/images/fullstacklabsWhiteLogo.png"),
       date: "August 2021 – Present",
+      stack: [
+        "TypeScript",
+        "React",
+        "React Native",
+        "Next.js",
+        "NestJS",
+        "Node.js",
+        "Flutter",
+        "Redux",
+        "MongoDB",
+        "MySQL",
+        "DynamoDB"
+      ],
       desc: "As an experienced developer, I emphasize my pivotal role in international web and mobile projects. I specialize in innovating the Backend, optimizing efficiency to meet the needs of global clients. In mobile applications, I lead the development of advanced features to ensure engaging and functional experiences. My expertise includes the integration of advanced technologies, keeping applications aligned with the latest trends. Additionally, I have successfully implemented CI/CD through AppCenter, ensuring efficiency in software delivery. My proficiency extends to expert migrations, showcasing advanced technical skills and the ability to manage changes seamlessly."
     },
     {
@@ -232,6 +191,16 @@ const workExperiences = {
       company: "Fullstack Labs",
       companylogo: asset("./assets/images/fullstacklabsWhiteLogo.png"),
       date: "September 2019 – August 2021",
+      stack: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "React Native",
+        "Node.js",
+        "Redux",
+        "MongoDB",
+        "MySQL"
+      ],
       desc: "As a passionate application developer, I took pride in highlighting my key contributions to internationally-focused web and mobile projects, led the development of solutions for global clients, optimized CMS functionality on an international scale, and enriched mobile application experiences for diverse and culturally varied audiences."
     },
     {
@@ -239,6 +208,17 @@ const workExperiences = {
       company: "CETOCO SAS",
       companylogo: asset("./assets/images/cetocoLogo.png"),
       date: "February 2019 - September 2019",
+      stack: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "React Native",
+        "Redux",
+        ".NET",
+        "Node.js",
+        "MongoDB",
+        "MySQL"
+      ],
       desc: "With a strong background as a web and mobile application developer, my focus is on creating and continually enhancing innovative digital experiences. My notable contributions involve leading the development of cutting-edge applications, optimizing the CMS by introducing exciting features, and consistently innovating in mobile applications to improve user experience and adopt cutting-edge technologies."
     },
     {
@@ -246,6 +226,16 @@ const workExperiences = {
       company: "Adatec",
       companylogo: asset("./assets/images/adatecLogo.png"),
       date: "August 2016 - February 2019",
+      stack: [
+        "JavaScript",
+        "TypeScript",
+        "Angular",
+        "React Native",
+        "Python",
+        "Django",
+        "MongoDB",
+        "MySQL"
+      ],
       desc: "As a passionate application developer, I have been a key driver in the development and implementation of innovative solutions for web and mobile applications. My focus stands out in leading creative and high-performance projects, effectively executing assigned tasks, continuously improving the CMS through the development of new features, constant innovation in mobile applications, and successfully mastering React Native to create new applications. This showcases my expertise in cutting-edge technologies and adaptability to new tools."
     },
     {
@@ -253,6 +243,7 @@ const workExperiences = {
       company: "ArquitecSOFT",
       companylogo: asset("./assets/images/arquitecSOFTLogo.png"),
       date: "September 2015 – August 2016",
+      stack: ["Java", "Oracle ADF", "Oracle DB"],
       desc: "As an application developer, I have played an essential role in the creation and continuous improvement of applications, excelling in various areas. This includes the efficient execution of new requirements with a proactive approach, detailed analysis and design of specialized solutions for Oracle databases, expertise in advanced technologies such as Java forms with Oracle's ADF, active collaboration and support for the business team, as well as the meticulous creation of test plans to ensure the robustness and effectiveness of the developed requirements."
     }
   ]

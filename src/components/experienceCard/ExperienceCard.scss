@@ -154,3 +154,28 @@
     font-size: 16px;
   }
 }
+
+/* Tech stack chips */
+.experience-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  padding-bottom: 4px;
+}
+
+.experience-chip {
+  background-color: $lightBackground3;
+  color: $textColor;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+.experience-chip-dark {
+  background-color: $buttonColor;
+  color: $textColorDark;
+}

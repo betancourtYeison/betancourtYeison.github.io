@@ -1,9 +1,27 @@
 @use "../../_globalColor" as *;
 
+.skill-category {
+  margin-bottom: 1.25rem;
+}
+
+.skill-category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $subTitle;
+  text-align: center;
+  margin: 0 0 0.75rem;
+}
+
+.dark-mode .skill-category-title {
+  color: $textColorDark;
+}
+
 .dev-icons {
   padding-left: 0;
   list-style: none;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0px;
   margin-top: 0px;
   text-align: center;
@@ -12,20 +30,25 @@
 .software-skill-inline {
   display: inline-block;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.software-skill-inline > i {
+.software-skill-inline > svg {
   color: $subTitle;
+  transition: color 0.2s ease-in, transform 0.2s ease-in;
 }
 
-.software-skill-inline > i:hover {
+.software-skill-inline:hover > svg {
   color: $skillsColor;
+  transform: translateY(-3px);
 }
+
 .software-skill-inline > p {
   color: $subTitle;
   font-size: 10px;
+  margin-top: 4px;
 }
-.software-skill-inline > i:hover ~ p {
+
+.software-skill-inline:hover > p {
   color: $skillsColor;
 }

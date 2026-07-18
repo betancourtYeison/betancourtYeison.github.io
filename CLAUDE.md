@@ -53,9 +53,17 @@ the CV and the site are edited independently.
   `react-reveal`; it honors `prefers-reduced-motion`.
 - Dark/light theme is handled via `src/contexts/StyleContext.js`
   (React Context) + `useLocalStorage` hook, toggled from the header.
-- Font Awesome icons are loaded from a CDN `<link>` in `index.html`
-  (v5.15.4) — `fontAwesomeClassname` values in `portfolio.js` must exist
-  in that version. (Planned replacement: react-icons, Fase 3.)
+- Icons come from **react-icons** (tree-shaken SVGs, no CDN): tech logos
+  use Simple Icons via an `icon` key in `portfolio.js` mapped in
+  [SoftwareSkill.jsx](src/components/softwareSkills/SoftwareSkill.jsx) —
+  add new map entries there when adding skills. Social icons live in
+  [SocialMedia.jsx](src/components/socialMedia/SocialMedia.jsx).
+- Typography: **Inter Variable** self-hosted via Fontsource (imported in
+  `src/index.jsx`); the header logo keeps the local Agustina font.
+- The header is `position: sticky` (no library). Work experience cards
+  render per-role tech chips from each experience's `stack` array —
+  note `WorkExperience.jsx` whitelists the fields it passes to
+  `ExperienceCard`, so new `portfolio.js` fields must be added there too.
 - SCSS uses `@use "..." as *` for `_globalColor.scss` (Dart Sass modern
   module system — do not reintroduce `@import`).
 
@@ -98,7 +106,7 @@ production build), `pnpm test` (Vitest smoke test).
 Package manager is **pnpm** (pinned via `packageManager` in
 `package.json`; lockfile `pnpm-lock.yaml`). Do not use npm/yarn — no
 `package-lock.json` should ever be committed. pnpm-specific settings
-(allowed build scripts, react-headroom peer-dependency override) live in
+(allowed build scripts) live in
 [pnpm-workspace.yaml](pnpm-workspace.yaml).
 
 ## Known state / tech debt (as of 2026-07)
@@ -106,12 +114,13 @@ Package manager is **pnpm** (pinned via `packageManager` in
 The full modernization roadmap (redesign, CI/CD, etc.) lives in
 [docs/PLAN-MEJORAS.md](docs/PLAN-MEJORAS.md) — consult it before starting
 improvement work so changes follow the agreed phases. Fases 1-2 are done
-(cleanup + Vite/React 19 migration); next up is Fase 3 (recruiter-focused
-redesign).
+(cleanup + Vite/React 19 migration + pnpm). Fase 3 (recruiter-focused
+redesign) is largely done: section reorder, sticky header, react-icons,
+Inter, availability badge, stack chips, grouped skills. Still pending
+from Fase 3: og:image/social preview, own favicon branding, WCAG AA
+contrast audit, project screenshots. Next: Fase 4 (View Transitions
+theme toggle).
 
-- [pnpm-workspace.yaml](pnpm-workspace.yaml) overrides `react-headroom`'s
-  peer range, which stops at React 18 (it works fine on 19). Remove both
-  the rule and `react-headroom` in Fase 3 (replace with CSS sticky).
 - `prettier` is a major behind (2→3); `dotenv` (8→17) too. Low risk,
   bump when convenient.
 - The Projects/Profile/Blogs sections fetch `profile.json`/`blogs.json`

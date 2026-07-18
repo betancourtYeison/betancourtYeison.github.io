@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import Headroom from "react-headroom";
 import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
@@ -23,8 +22,7 @@ function Header() {
   const viewTalks = talkSection.display;
 
   return (
-    <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
+    <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
           <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
@@ -39,14 +37,14 @@ function Header() {
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {viewSkills && (
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-          )}
           {viewExperience && (
             <li>
               <a href="#experience">Work Experiences</a>
+            </li>
+          )}
+          {viewSkills && (
+            <li>
+              <a href="#skills">Skills</a>
             </li>
           )}
           {viewOpenSource && (
@@ -80,7 +78,6 @@ function Header() {
           </li>
         </ul>
       </header>
-    </Headroom>
   );
 }
 export default Header;

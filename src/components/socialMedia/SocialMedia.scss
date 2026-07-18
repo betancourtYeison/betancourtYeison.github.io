@@ -8,81 +8,80 @@
   margin-bottom: 10px;
 }
 
-.icon-button i {
+.icon-button svg {
   color: $textColorDark;
   border-radius: 2.6rem;
   cursor: pointer;
   display: inline-block;
-  font-size: 1.3rem;
   height: 2.6rem;
-  line-height: 2.6rem;
+  width: 2.6rem;
+  padding: 0.65rem;
+  box-sizing: border-box;
   margin: 0 5px;
   position: relative;
-  text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 2.6rem;
   margin-bottom: 10px;
   transition: 0.2s ease-in;
 }
 
-.facebook i {
+.facebook svg {
   background-color: $faceBook;
 }
 
-.linkedin i {
+.linkedin svg {
   background-color: $linkedin;
 }
 
-.github i {
+.github svg {
   background-color: $github;
 }
 
-.gitlab i {
+.gitlab svg {
   background-color: $gitlab;
 }
 
-.google i {
+.google svg {
   background-color: $google;
 }
 
-.twitter i {
+.twitter svg {
   background-color: $twitter;
 }
 
-.medium i {
+.medium svg {
   background-color: $medium;
 }
 
-.stack-overflow i {
+.stack-overflow svg {
   background-color: $stackoverflow;
 }
 
-.kaggle i {
+.kaggle svg {
   background-color: $kaggle;
 }
 
-.instagram i {
+.instagram svg {
   background-color: $instagram;
 }
 
-.outlook i {
+.outlook svg {
   background-color: $outlook;
 }
 
 /* Hover Transition */
-.twitter i:hover,
-.google i:hover,
-.gitlab i:hover,
-.github i:hover,
-.linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
-.stack-overflow i:hover,
-.kaggle i:hover,
-.medium i:hover {
+.twitter svg:hover,
+.google svg:hover,
+.gitlab svg:hover,
+.github svg:hover,
+.linkedin svg:hover,
+.facebook svg:hover,
+.instagram svg:hover,
+.stack-overflow svg:hover,
+.kaggle svg:hover,
+.medium svg:hover {
   background-color: $textColor;
 }
 

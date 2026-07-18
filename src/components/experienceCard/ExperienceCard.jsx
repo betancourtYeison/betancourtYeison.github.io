@@ -72,6 +72,20 @@ export default function ExperienceCard({cardInfo, isDark}) {
         <ul>
           <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
         </ul>
+        {cardInfo.stack && cardInfo.stack.length > 0 && (
+          <div className="experience-stack">
+            {cardInfo.stack.map(tech => (
+              <span
+                key={tech}
+                className={
+                  isDark ? "experience-chip experience-chip-dark" : "experience-chip"
+                }
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
