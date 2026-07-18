@@ -478,7 +478,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: asset("./assets/resources/icesi/securityCertified.png")
+          url: asset("./assets/resources/icesi/securityCertified.jpg")
         }
       ]
     },

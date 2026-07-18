@@ -134,18 +134,22 @@ flip in `document.startViewTransition` + `flushSync`, with the reveal
 keyframes in `src/index.css`; it falls back to an instant swap when the
 API is unavailable or `prefers-reduced-motion` is set. Fase 5
 (SEO/a11y/perf) is done: single `<h1>` (section headings are now `<h2>`),
-JSON-LD Person + canonical + `public/sitemap.xml`/`robots.txt`, `og:image`
-(`public/og-image.svg` — export to PNG for full LinkedIn/FB support),
-global `:focus-visible` outline, splash skipped under reduced-motion,
-`loading="lazy"` on below-the-fold images, and Lottie loaded via
-`React.lazy` (lottie-web is now a separate ~80 kB gzip chunk; main bundle
-294→222 kB gzip). Still pending: own favicon branding, WCAG AA contrast
-audit, project screenshots. Fase 6 (CI/CD) is done: GitHub Actions build
-+ deploy on push to `develop` and PR checks (see Build & deploy above) —
-pending the one-time repo setting Pages → Source = "GitHub Actions".
+JSON-LD Person + canonical + `public/sitemap.xml`/`robots.txt`,
+`og:image` (`public/og-image.png`, rasterized from `og-image.svg`),
+own-branded favicon (purple "Y" monogram, `public/favicon.svg` + PNG
+sizes + `.ico`), global `:focus-visible` outline, splash skipped under
+reduced-motion, `loading="lazy"` on below-the-fold images, and Lottie
+loaded via `React.lazy` (lottie-web is a separate ~80 kB gzip chunk).
+WCAG AA contrast: `$subTitle`/`$talkCardSubTitle` were darkened to
+`#677079` (≥4.5:1 on white); a `.dark-mode .subTitle` override
+(`$subTitleDark #aeb6c1`) keeps subtitles readable on dark backgrounds.
+Fase 6 (CI/CD) is done: `develop` (integration) → `master` (production)
+model — deploy.yml runs on push to `master`, ci.yml on PRs to both (see
+Build & deploy above). Still pending: project screenshots.
 
-Known heavy asset: `src/assets/resources/icesi/securityCertified.png` is
-~7.7 MB and inflates the build — resize/recompress it.
+Branding assets (og-image, favicons) are generated from the SVG sources
+with a one-off `sharp` script — `sharp` is intentionally NOT a committed
+dependency; re-add it only transiently if you need to regenerate them.
 
 - `prettier` is a major behind (2→3); `dotenv` (8→17) too. Low risk,
   bump when convenient.
