@@ -21,7 +21,7 @@ export default function Skills() {
             {illustration.animated ? (
               <DisplayLottie animationData={codingPerson} />
             ) : (
-              <img
+              <img loading="lazy"
                 alt="Man Working"
                 src={developerActivity}
               ></img>
@@ -30,11 +30,11 @@ export default function Skills() {
         </Fade>
         <Fade right duration={1000}>
           <div className="skills-text-div">
-            <h1
+            <h2
               className={isDark ? "dark-mode skills-heading" : "skills-heading"}
             >
               {skillsSection.title}{" "}
-            </h1>
+            </h2>
             <p
               className={
                 isDark
