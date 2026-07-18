@@ -13,7 +13,7 @@ export default function GithubProfileCard({prof}) {
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="contact">
-        <h1 className="prof-title">Reach Out to me!</h1>
+        <h2 className="prof-title">Reach Out to me!</h2>
         <div className="row">
           <div className="main-content-profile">
             <div className="blog-header">
@@ -48,7 +48,7 @@ export default function GithubProfileCard({prof}) {
             <SocialMedia />
           </div>
           <div className="image-content-profile">
-            <img
+            <img loading="lazy"
               src={prof.avatarUrl}
               alt={prof.name}
               className="profile-image"

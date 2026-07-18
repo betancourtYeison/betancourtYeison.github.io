@@ -251,7 +251,24 @@ fallback, nadie queda fuera.
 
 ---
 
-## Fase 5 — SEO, accesibilidad y performance
+## Fase 5 — SEO, accesibilidad y performance ✅ (hecha)
+
+Implementada. Resumen de lo hecho:
+- **SEO**: `<title>` con nombre+rol, `og:*`/`twitter:*` alineados,
+  `link canonical`, JSON-LD `Person`, `public/sitemap.xml` + `robots.txt`
+  con Sitemap, y `og:image` (`public/og-image.svg`, tarjeta 1200×630
+  branded). Nota: LinkedIn/Facebook a veces no renderizan SVG — exportar a
+  PNG para compatibilidad total (comentario en `index.html`).
+- **A11y**: un solo `<h1>` (los encabezados de sección pasaron a `<h2>`),
+  `:focus-visible` global, splash screen omitido con
+  `prefers-reduced-motion`, `alt` verificados en todas las imágenes.
+- **Performance**: `loading="lazy"` en imágenes bajo el fold; `lottie-react`
+  cargado con `React.lazy` → lottie-web es un chunk async (~80 kB gzip),
+  bundle principal de 294→222 kB gzip.
+
+Pendiente/seguimiento: exportar el og:image a PNG, favicon propio,
+auditoría de contraste WCAG AA, screenshots de proyectos, y optimizar
+`securityCertified.png` (7.7 MB).
 
 ### SEO
 - Meta tags Open Graph + Twitter Card con imagen social (og:image

@@ -1,23 +1,14 @@
-import React, {Component, Suspense} from "react";
-import Lottie from "lottie-react";
+import React, {lazy, Suspense} from "react";
 import Loading from "../../containers/loading/Loading";
 
-export default class DisplayLottie extends Component {
-  render() {
-    const animationData = this.props.animationData;
-    const defaultOptions = {
-      loop: true,
-      autoplay: true,
-      animationData: animationData
-    };
+// lottie-react pulls in lottie-web (~250 kB). Loading it as a separate
+// async chunk keeps it out of the main bundle.
+const Lottie = lazy(() => import("lottie-react"));
 
-    return (
-      <Suspense fallback={<Loading />}>
-        <Lottie
-          animationData={defaultOptions.animationData}
-          loop={defaultOptions.loop}
-        />
-      </Suspense>
-    );
-  }
+export default function DisplayLottie({animationData}) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <Lottie animationData={animationData} loop={true} />
+    </Suspense>
+  );
 }

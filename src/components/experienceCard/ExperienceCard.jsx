@@ -32,7 +32,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
           <h5 className="experience-text-company">{cardInfo.company}</h5>
         </div>
 
-        <img
+        <img loading="lazy"
           crossOrigin={"anonymous"}
           ref={imgRef}
           className="experience-roundedimg"

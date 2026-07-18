@@ -23,12 +23,17 @@ import "./Main.scss";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
+  // Skip the splash animation for users who prefer reduced motion.
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const showSplash = splashScreen.enabled && !prefersReducedMotion;
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
-    useState(true);
+    useState(showSplash);
 
   useEffect(() => {
-    if (splashScreen.enabled) {
+    if (showSplash) {
       const splashTimer = setTimeout(
         () => setIsShowingSplashAnimation(false),
         splashScreen.duration
@@ -37,7 +42,7 @@ const Main = () => {
         clearTimeout(splashTimer);
       };
     }
-  }, []);
+  }, [showSplash]);
 
   // Animate the theme swap with the View Transitions API: a circular
   // reveal that irises out from the toggle (origin passed by the caller).

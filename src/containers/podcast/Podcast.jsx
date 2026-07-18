@@ -17,7 +17,7 @@ export default function Podcast() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main">
         <div className="podcast-header">
-          <h1 className="podcast-header-title">{podcastSection.title}</h1>
+          <h2 className="podcast-header-title">{podcastSection.title}</h2>
           <p
             className={
               isDark

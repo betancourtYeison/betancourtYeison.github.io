@@ -121,10 +121,18 @@ the theme toggle animates via the View Transitions API (circular reveal
 from the toggle) — `changeTheme(origin)` in `Main.jsx` wraps the state
 flip in `document.startViewTransition` + `flushSync`, with the reveal
 keyframes in `src/index.css`; it falls back to an instant swap when the
-API is unavailable or `prefers-reduced-motion` is set. Still pending from
-Fase 3: og:image/social preview, own favicon branding, WCAG AA contrast
-audit, project screenshots. Next: Fase 5 (SEO/a11y/perf) or Fase 6
-(CI/CD).
+API is unavailable or `prefers-reduced-motion` is set. Fase 5
+(SEO/a11y/perf) is done: single `<h1>` (section headings are now `<h2>`),
+JSON-LD Person + canonical + `public/sitemap.xml`/`robots.txt`, `og:image`
+(`public/og-image.svg` — export to PNG for full LinkedIn/FB support),
+global `:focus-visible` outline, splash skipped under reduced-motion,
+`loading="lazy"` on below-the-fold images, and Lottie loaded via
+`React.lazy` (lottie-web is now a separate ~80 kB gzip chunk; main bundle
+294→222 kB gzip). Still pending: own favicon branding, WCAG AA contrast
+audit, project screenshots. Next: Fase 6 (CI/CD via GitHub Actions).
+
+Known heavy asset: `src/assets/resources/icesi/securityCertified.png` is
+~7.7 MB and inflates the build — resize/recompress it.
 
 - `prettier` is a major behind (2→3); `dotenv` (8→17) too. Low risk,
   bump when convenient.
