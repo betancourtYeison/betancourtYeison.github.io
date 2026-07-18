@@ -25,13 +25,13 @@
       property="og:description"
       content="Portfolio of Yeison Betancourt Solís, Senior Software Engineer building web and mobile applications with JavaScript, TypeScript, React and Node.js"
     />
-    <!-- NOTE: some crawlers (LinkedIn, older Facebook) don't render SVG
-         previews. For maximum compatibility, export public/og-image.svg to
-         a 1200x630 PNG and point these tags at og-image.png instead. -->
+    <!-- PNG for broad crawler compatibility (LinkedIn/Facebook don't
+         render SVG previews). Rasterized from public/og-image.svg. -->
     <meta
       property="og:image"
-      content="https://betancourtyeison.github.io/og-image.svg"
+      content="https://betancourtyeison.github.io/og-image.png"
     />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -52,35 +52,36 @@
     />
     <meta
       property="twitter:image"
-      content="https://betancourtyeison.github.io/og-image.svg"
+      content="https://betancourtyeison.github.io/og-image.png"
     />
 
     <meta name="msapplication-TileColor" content="#603cba" />
     <meta name="theme-color" content="#6c63ff" />
 
-    <!-- Customize icons -->
+    <!-- Icons (own branding — purple "Y" monogram) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=9" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicon-32x32.png?v8=qAJ44G5Bm7"
+      href="/favicon-32x32.png?v=9"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/favicon-16x16.png?v8=qAJ44G5Bm7"
+      href="/favicon-16x16.png?v=9"
     />
     <link
       rel="mask-icon"
-      href="/safari-pinned-tab.svg?v8=qAJ44G5Bm7"
-      color="#885bd5"
+      href="/safari-pinned-tab.svg?v=9"
+      color="#55198b"
     />
-    <link rel="shortcut icon" href="/favicon.ico?v8=qAJ44G5Bm7" />
+    <link rel="shortcut icon" href="/favicon.ico?v=9" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/apple-touch-icon.png?v8=qAJ44G5Bm7"
+      href="/apple-touch-icon.png?v=9"
     />
     <link rel="manifest" href="/manifest.json" />
 

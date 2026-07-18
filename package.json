@@ -17,7 +17,6 @@
     "start": "node fetch.js && vite",
     "build": "node fetch.js && vite build",
     "preview": "vite preview",
-    "deploy": "pnpm run build && gh-pages -b master -d dist",
     "test": "vitest run",
     "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
     "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
@@ -27,7 +26,6 @@
     "@testing-library/react": "^16.3.2",
     "@vitejs/plugin-react": "^6.0.3",
     "dotenv": "8.2.0",
-    "gh-pages": "^6.3.0",
     "jsdom": "^29.1.1",
     "prettier": "2.3.1",
     "sass": "^1.101.0",

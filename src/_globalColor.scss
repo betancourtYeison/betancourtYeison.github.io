@@ -8,15 +8,19 @@ $buttonHover: #8c43ce;
 $topButtonHover: #000;
 
 // text colors light theme
+// $subTitle / $talkCardSubTitle darkened to meet WCAG AA (>=4.5:1) on
+// white — the old #868e96/#7f8287 were ~3.3-3.9:1 (fail).
 $titleColor: #000000;
 $textColor: #000000;
-$subTitle: #868e96;
+$subTitle: #677079;
 $cardSubtitle: #666666;
-$talkCardSubTitle: #7f8287;
+$talkCardSubTitle: #677079;
 $blogCardTitleColor: #262626;
 
 // text color dark theme
 $textColorDark: #ffffff;
+// muted subtitle on dark backgrounds (AA-compliant on $darkBackground)
+$subTitleDark: #aeb6c1;
 
 // toggle switch colors
 $toggleCheck: #2196f3;
