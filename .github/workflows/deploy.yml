@@ -1,0 +1,71 @@
+name: Deploy to GitHub Pages
+
+# Builds the site and deploys it to GitHub Pages via the official Pages
+# actions. REQUIRES a one-time setting in the repo: Settings → Pages →
+# Build and deployment → Source = "GitHub Actions" (instead of the master
+# branch). Until that is switched, the deploy job will fail while the site
+# keeps serving the last state from master.
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+# Least-privilege permissions the Pages deployment needs.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; newer pushes supersede in-flight runs.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+        # Optional GitHub/Medium data fetch (see fetch.js). These resolve to
+        # empty when unset, and the build falls back to portfolio.js data.
+        env:
+          USE_GITHUB_DATA: ${{ vars.USE_GITHUB_DATA }}
+          GITHUB_USERNAME: ${{ vars.GH_USERNAME }}
+          VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+          MEDIUM_USERNAME: ${{ vars.MEDIUM_USERNAME }}
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,8 @@
-src/serviceWorker.js
-package-lock.json
+dist
+build
+coverage
+node_modules
+pnpm-lock.yaml
 src/assets/lottie
-
+public/profile.json
+public/blogs.json
