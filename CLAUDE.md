@@ -85,25 +85,31 @@ but never break the build.
 
 ## Build & deploy
 
-Two paths exist. `homepage`/`base` must keep resolving to
-`https://betancourtyeison.github.io/` (Vite `base: "/"`) for either.
+Branch model: **`develop`** is the integration branch (all feature work
+lands here first); **`master`** is the production branch that publishes the
+live site. Publish by opening a **`develop` → `master` PR** and merging it.
+`homepage`/`base` must keep resolving to `https://betancourtyeison.github.io/`
+(Vite `base: "/"`).
 
-**Automatic (CI, primary):** [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
-builds and deploys to GitHub Pages via the official Pages actions on every
-push to `develop` (or manual `workflow_dispatch`). This requires the repo
-setting **Settings → Pages → Source = "GitHub Actions"**. On PRs to
-`develop`, [.github/workflows/ci.yml](.github/workflows/ci.yml) runs
-`check-format` + `test` + `build`.
+**Automatic (CI, primary):**
+- [.github/workflows/ci.yml](.github/workflows/ci.yml) — on PRs to
+  `develop` or `master`, runs `check-format` + `test` + `build`.
+- [.github/workflows/deploy.yml](.github/workflows/deploy.yml) — on push to
+  `master` (i.e. when a develop→master PR merges) or manual
+  `workflow_dispatch`, builds and deploys to GitHub Pages via the official
+  Pages actions. Repo setting Settings → Pages → Source = "GitHub Actions"
+  is already configured; the `github-pages` environment allows deploys from
+  `master`.
 
-**Manual (backup):** `pnpm run deploy` (`pnpm run build && gh-pages -b
-master -d dist`) force-pushes `dist/` to the `master` branch, which is the
-legacy Pages source. Only relevant while Pages is still set to serve from
-`master`, or as an emergency path. **Never run `pnpm run deploy` without
-explicit user confirmation** — it force-pushes to `master`, a
-shared/public branch.
+**Manual (backup):** `pnpm run deploy` runs `pnpm run build && gh-pages -b
+master -d dist`. This is now defunct as a deploy path — Pages serves the
+Actions artifact, not the `master` branch tree, so it would only overwrite
+source on `master`. Prefer re-running the deploy workflow
+(`workflow_dispatch`) instead. **Never run `pnpm run deploy` without
+explicit user confirmation.**
 
-Work happens on `develop`; `master` is build output and should not be
-edited by hand.
+Work happens on `develop`; `master` mirrors `develop` at each release and
+should not be edited by hand.
 
 Local dev: `pnpm start` (Vite dev server), `pnpm run preview` (serve the
 production build), `pnpm test` (Vitest smoke test).

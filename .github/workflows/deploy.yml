@@ -1,14 +1,14 @@
 name: Deploy to GitHub Pages
 
 # Builds the site and deploys it to GitHub Pages via the official Pages
-# actions. REQUIRES a one-time setting in the repo: Settings → Pages →
-# Build and deployment → Source = "GitHub Actions" (instead of the master
-# branch). Until that is switched, the deploy job will fail while the site
-# keeps serving the last state from master.
+# actions. Runs on push to `master`, the production branch: publish by
+# merging a develop -> master PR. Day-to-day work lands on `develop` first
+# (validated by ci.yml). Requires the repo setting Settings → Pages →
+# Source = "GitHub Actions" (already configured).
 
 on:
   push:
-    branches: [develop]
+    branches: [master]
   workflow_dispatch:
 
 # Least-privilege permissions the Pages deployment needs.
