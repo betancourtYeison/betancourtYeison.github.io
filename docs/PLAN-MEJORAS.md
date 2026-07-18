@@ -180,11 +180,28 @@ como demostración de tu nivel de frontend.
 
 ---
 
-## Fase 4 — Theme toggle con View Transitions API
+## Fase 4 — Theme toggle con View Transitions API ✅ (hecha)
 
-Referencia elegida: https://theme-toggle.rdsx.dev/ — usa la
+Implementada. Referencia: https://theme-toggle.rdsx.dev/ — usa la
 **View Transitions API** (`document.startViewTransition`) para animar el
 cambio de tema con una revelación circular desde el botón.
+
+Resumen de lo implementado:
+- `changeTheme(origin)` en `src/containers/Main.jsx` envuelve el cambio de
+  estado en `document.startViewTransition` + `flushSync` (React aplica la
+  clase de tema de forma síncrona para que el navegador capture el
+  snapshot "new" ya con el tema cambiado).
+- `ToggleSwitch.jsx` calcula el centro del botón con `getBoundingClientRect`
+  y lo pasa como origen (funciona igual con click o teclado); se eliminó el
+  estado `isChecked` redundante.
+- Keyframes `theme-reveal` en `src/index.css` con `clip-path: circle()`
+  desde `--vt-x/--vt-y` y radio `--vt-r` (esquina más lejana).
+- Fallback a cambio instantáneo si no hay soporte o
+  `prefers-reduced-motion: reduce`.
+
+Nota: no fue necesario migrar los colores a CSS custom properties como se
+preveía; la clase `.dark-mode` sigue funcionando porque la API captura todo
+el documento. Esa migración queda como mejora opcional futura.
 
 ### Implementación
 
