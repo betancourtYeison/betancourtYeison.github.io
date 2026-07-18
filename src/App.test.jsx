@@ -1,9 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {render} from "@testing-library/react";
+import {vi} from "vitest";
 import App from "./App";
 
-// Plain function instead of jest.fn(): CRA sets jest's resetMocks to
-// true, which would wipe a mockImplementation before the test runs.
+// lottie-web needs canvas APIs that jsdom doesn't implement.
+vi.mock("lottie-react", () => ({default: () => null}));
+
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: query => ({
@@ -19,7 +21,5 @@ Object.defineProperty(window, "matchMedia", {
 });
 
 it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<App />);
 });

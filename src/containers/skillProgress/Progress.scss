@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as *;
 
 .meter {
   height: 20px;
@@ -54,7 +54,7 @@
   .skills-bar {
     line-height: 4rem;
   }
-  
+
   .skills-image {
     margin-top: -50px;
   }
@@ -68,7 +68,7 @@
     line-height: 3rem;
     margin: 20px;
   }
- 
+
   .skills-image {
     margin-top: -50px;
   }

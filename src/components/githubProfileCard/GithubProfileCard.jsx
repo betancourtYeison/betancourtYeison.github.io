@@ -2,7 +2,7 @@ import React from "react";
 import "./GithubProfileCard.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {contactInfo, isHireable} from "../../portfolio";
-import {Fade} from "react-reveal";
+import {Fade} from "../../components/reveal/Reveal";
 
 export default function GithubProfileCard({prof}) {
   if (isHireable) {

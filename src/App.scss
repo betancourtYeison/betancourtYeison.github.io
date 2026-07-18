@@ -1,4 +1,4 @@
-@import "./globalColor";
+@use "_globalColor" as *;
 
 .App {
   text-align: center;

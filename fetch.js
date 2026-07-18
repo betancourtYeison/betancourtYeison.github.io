@@ -1,7 +1,7 @@
 const fs = require("fs");
 require("dotenv").config();
 
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.VITE_GITHUB_TOKEN;
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
 const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
@@ -64,7 +64,7 @@ async function fetchGithubProfile() {
   });
   if (!res.ok) {
     throw new Error(
-      `GitHub request failed with status ${res.status}. Check REACT_APP_GITHUB_TOKEN in your .env file.`
+      `GitHub request failed with status ${res.status}. Check VITE_GITHUB_TOKEN in your .env file.`
     );
   }
   const data = await res.text();

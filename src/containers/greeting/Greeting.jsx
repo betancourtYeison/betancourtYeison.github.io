@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
-import {Fade} from "react-reveal";
+import manOnTable from "../../assets/images/manOnTable.svg";
+import {Fade} from "../../components/reveal/Reveal";
 import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
@@ -54,7 +55,7 @@ export default function Greeting() {
             ) : (
               <img
                 alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
+                src={manOnTable}
               ></img>
             )}
           </div>

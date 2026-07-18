@@ -7,8 +7,8 @@ Sitio en vivo: https://betancourtyeison.github.io/
 
 ## De qué trata
 
-Portafolio personal construido con **Create React App (react-scripts 5)**,
-React 16 y SCSS. Es una plantilla data-driven: casi todo el contenido
+Portafolio personal construido con **Vite + React 19** y SCSS. Es una
+plantilla data-driven: casi todo el contenido
 visible (bio, skills, experiencia laboral, educación, proyectos,
 certificaciones, blogs, charlas, contacto) vive en un único archivo de
 configuración, [`src/portfolio.js`](src/portfolio.js), y los componentes
@@ -16,9 +16,9 @@ solo se encargan de renderizar esos datos.
 
 ## Cómo funciona
 
-- `src/App.js` → `src/containers/Main.js` compone la página completa:
+- `src/App.jsx` → `src/containers/Main.jsx` compone la página completa:
   cada sección (Greeting, Skills, WorkExperience, Education, Projects,
-  Achievement, Blogs, Talks, Twitter, Podcast, Profile, Footer) es un
+  Achievement, Blogs, Talks, Podcast, Profile, Footer) es un
   contenedor propio en `src/containers/*` que lee sus datos desde
   `portfolio.js`.
 - Los componentes reutilizables (cards, botones, header, footer, iconos
@@ -26,7 +26,10 @@ solo se encargan de renderizar esos datos.
 - El tema claro/oscuro se maneja con React Context
   (`src/contexts/StyleContext.js`) y se guarda en `localStorage`.
 - Los iconos son de Font Awesome 5.15.4, cargados por CDN desde
-  `public/index.html`.
+  [`index.html`](index.html).
+- Las animaciones de aparición al hacer scroll usan
+  [`src/components/reveal/Reveal.jsx`](src/components/reveal/Reveal.jsx)
+  (basado en `motion`), que respeta `prefers-reduced-motion`.
 - Antes de `start`/`build` corre [`fetch.js`](fetch.js), un script opcional
   controlado por variables de entorno (ver [`env.example`](env.example)):
   si `USE_GITHUB_DATA=true` trae el perfil y repos destacados desde la API
@@ -68,16 +71,17 @@ generada automáticamente y **no debe editarse a mano**.
    ```bash
    npm run build
    ```
-   Corre `fetch.js` y luego `react-scripts build`, generando la carpeta
-   `build/` con el sitio estático optimizado.
+   Corre `fetch.js` y luego `vite build`, generando la carpeta
+   `dist/` con el sitio estático optimizado. Puedes previsualizarla con
+   `npm run preview`.
 
 6. **Despliegue a GitHub Pages**
    ```bash
    npm run deploy
    ```
    Este comando ejecuta `predeploy` (que es `npm run build`) y luego usa
-   el paquete `gh-pages` para forzar un push del contenido de `build/` a
-   la rama `master` de este mismo repositorio (`gh-pages -b master -d build`).
+   el paquete `gh-pages` para forzar un push del contenido de `dist/` a
+   la rama `master` de este mismo repositorio (`gh-pages -b master -d dist`).
    GitHub Pages sirve el sitio directamente desde `master`.
 
    **No hay CI/CD automático**: el despliegue es manual y bajo demanda,

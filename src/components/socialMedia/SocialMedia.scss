@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as *;
 
 .social-media-div {
   font-size: 2em;
@@ -69,7 +69,7 @@
 }
 
 .outlook i {
-  background-color: $outlook
+  background-color: $outlook;
 }
 
 /* Hover Transition */
