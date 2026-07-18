@@ -28,3 +28,10 @@
 .subTitle {
   color: $subTitle;
 }
+
+/* In dark mode, any .subTitle text sits on a dark background; use a lighter
+   muted gray so it stays AA-compliant (the light-mode $subTitle would be
+   too dark on dark). */
+.dark-mode .subTitle {
+  color: $subTitleDark;
+}
