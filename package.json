@@ -3,8 +3,9 @@
   "name": "betancourtyeison",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.1.1",
   "dependencies": {
-    "colorthief": "2.3.0",
+    "colorthief": "3.4.0",
     "lottie-react": "^2.4.1",
     "motion": "^12.42.2",
     "react": "^19.2.7",
@@ -12,11 +13,10 @@
     "react-headroom": "^3.2.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
     "start": "node fetch.js && vite",
     "build": "node fetch.js && vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -b master -d dist",
+    "deploy": "pnpm run build && gh-pages -b master -d dist",
     "test": "vitest run",
     "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
     "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""

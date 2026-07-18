@@ -3,6 +3,6 @@ repos:
     hooks:
       - id: prettier
         name: prettier
-        entry: npx prettier --write
+        entry: pnpm exec prettier --write
         language: system
         files: ".*\\.(json|js|css|scss)$"

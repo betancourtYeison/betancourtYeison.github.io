@@ -1,20 +1,14 @@
 import React, {useState, createRef} from "react";
 import "./ExperienceCard.scss";
-import ColorThief from "colorthief";
+import {getColorSync} from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {
-  const [colorArrays, setColorArrays] = useState([]);
+  const [bannerColor, setBannerColor] = useState(null);
   const imgRef = createRef();
 
   function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
-  }
-
-  function rgb(values) {
-    return typeof values === "undefined"
-      ? null
-      : "rgb(" + values.join(", ") + ")";
+    const color = getColorSync(imgRef.current);
+    setBannerColor(color ? color.css() : null);
   }
 
   const GetDescBullets = ({descBullets, isDark}) => {
@@ -32,7 +26,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
 
   return (
     <div className={isDark ? "experience-card-dark" : "experience-card"}>
-      <div style={{background: rgb(colorArrays)}} className="experience-banner">
+      <div style={{background: bannerColor}} className="experience-banner">
         <div className="experience-blurred_div"></div>
         <div className="experience-div-company">
           <h5 className="experience-text-company">{cardInfo.company}</h5>

@@ -1,0 +1,12 @@
+# pnpm settings (pnpm 11 reads these from pnpm-workspace.yaml)
+
+# sass pulls @parcel/watcher, which compiles a native binding on install.
+allowBuilds:
+  "@parcel/watcher": true
+
+# react-headroom's peer range stops at React 18 although it works on 19;
+# drop the rule once react-headroom is replaced (Fase 3 of docs/PLAN-MEJORAS.md).
+peerDependencyRules:
+  allowedVersions:
+    "react-headroom>react": "19"
+    "react-headroom>react-dom": "19"

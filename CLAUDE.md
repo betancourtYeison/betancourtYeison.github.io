@@ -80,7 +80,7 @@ but never break the build.
 There is **no GitHub Actions workflow** (planned: Fase 6). Deployment is
 manual via the `gh-pages` npm package:
 
-1. `npm run deploy` → runs `predeploy` (`npm run build`, which runs
+1. `pnpm run deploy` → runs `predeploy` (`pnpm run build`, which runs
    `fetch.js` then `vite build` into `dist/`).
 2. `gh-pages -b master -d dist` force-pushes the `dist/` output to the
    `master` branch of this same repo.
@@ -88,12 +88,18 @@ manual via the `gh-pages` npm package:
 4. `homepage`/`base` must keep resolving to
    `https://betancourtyeison.github.io/` (Vite `base: "/"`).
 
-Work happens on `develop`; `master` is overwritten by `npm run deploy` and
-should not be edited by hand. **Never run `npm run deploy` without explicit
+Work happens on `develop`; `master` is overwritten by `pnpm run deploy` and
+should not be edited by hand. **Never run `pnpm run deploy` without explicit
 user confirmation** — it force-pushes to `master`, a shared/public branch.
 
-Local dev: `npm start` (Vite dev server), `npm run preview` (serve the
-production build), `npm test` (Vitest smoke test).
+Local dev: `pnpm start` (Vite dev server), `pnpm run preview` (serve the
+production build), `pnpm test` (Vitest smoke test).
+
+Package manager is **pnpm** (pinned via `packageManager` in
+`package.json`; lockfile `pnpm-lock.yaml`). Do not use npm/yarn — no
+`package-lock.json` should ever be committed. pnpm-specific settings
+(allowed build scripts, react-headroom peer-dependency override) live in
+[pnpm-workspace.yaml](pnpm-workspace.yaml).
 
 ## Known state / tech debt (as of 2026-07)
 
@@ -103,11 +109,11 @@ improvement work so changes follow the agreed phases. Fases 1-2 are done
 (cleanup + Vite/React 19 migration); next up is Fase 3 (recruiter-focused
 redesign).
 
-- [.npmrc](.npmrc) sets `legacy-peer-deps=true` because `react-headroom`'s
-  peer range stops at React 18 (it works fine on 19). Remove both the
-  flag and `react-headroom` in Fase 3 (replace with CSS sticky).
-- `prettier` is a major behind (2→3); `dotenv` (8→17) and `colorthief`
-  (2→3) too. Low risk, bump when convenient.
+- [pnpm-workspace.yaml](pnpm-workspace.yaml) overrides `react-headroom`'s
+  peer range, which stops at React 18 (it works fine on 19). Remove both
+  the rule and `react-headroom` in Fase 3 (replace with CSS sticky).
+- `prettier` is a major behind (2→3); `dotenv` (8→17) too. Low risk,
+  bump when convenient.
 - The Projects/Profile/Blogs sections fetch `profile.json`/`blogs.json`
   at runtime and log console errors when absent (expected fallback
   behavior, inherited from the template).
@@ -117,7 +123,7 @@ redesign).
 - Tests: a single Vitest smoke test ([src/App.test.jsx](src/App.test.jsx))
   that mocks `matchMedia` and `lottie-react` — don't assume meaningful
   coverage exists.
-- Formatting via Prettier (`npm run format` / `npm run check-format`),
+- Formatting via Prettier (`pnpm run format` / `pnpm run check-format`),
   config in `.prettierrc` (semicolons on, no trailing commas, double
   quotes). A pre-commit hook (`.pre-commit-config.yaml`) runs the local
   prettier on `js|css|json|scss`.

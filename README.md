@@ -42,13 +42,18 @@ solo se encargan de renderizar esos datos.
 Todo el desarrollo ocurre en la rama `develop`. La rama `master` es
 generada automáticamente y **no debe editarse a mano**.
 
+El gestor de paquetes del proyecto es **pnpm** (versión fijada en el
+campo `packageManager` de `package.json`; configuración adicional en
+`pnpm-workspace.yaml`). No uses npm ni yarn — generarían lockfiles
+duplicados.
+
 1. **Desarrollo local**
    ```bash
-   npm install
+   pnpm install
    cp env.example .env   # opcional, solo si vas a usar USE_GITHUB_DATA o MEDIUM_USERNAME
-   npm start
+   pnpm start
    ```
-   Levanta el servidor de desarrollo en `http://localhost:3000`.
+   Levanta el servidor de desarrollo en `http://localhost:5173` (Vite).
 
 2. **Actualizar contenido**
    Edita [`src/portfolio.js`](src/portfolio.js) para cambios de contenido
@@ -57,8 +62,8 @@ generada automáticamente y **no debe editarse a mano**.
 
 3. **Formateo**
    ```bash
-   npm run format         # aplica Prettier
-   npm run check-format   # solo verifica, no modifica
+   pnpm run format         # aplica Prettier
+   pnpm run check-format   # solo verifica, no modifica
    ```
    Hay un pre-commit hook (`.pre-commit-config.yaml`) que corre Prettier
    sobre archivos `js|css|json` antes de cada commit.
@@ -69,17 +74,17 @@ generada automáticamente y **no debe editarse a mano**.
 
 5. **Build de producción**
    ```bash
-   npm run build
+   pnpm run build
    ```
    Corre `fetch.js` y luego `vite build`, generando la carpeta
    `dist/` con el sitio estático optimizado. Puedes previsualizarla con
-   `npm run preview`.
+   `pnpm run preview`.
 
 6. **Despliegue a GitHub Pages**
    ```bash
-   npm run deploy
+   pnpm run deploy
    ```
-   Este comando ejecuta `predeploy` (que es `npm run build`) y luego usa
+   Este comando ejecuta `predeploy` (que es `pnpm run build`) y luego usa
    el paquete `gh-pages` para forzar un push del contenido de `dist/` a
    la rama `master` de este mismo repositorio (`gh-pages -b master -d dist`).
    GitHub Pages sirve el sitio directamente desde `master`.
@@ -90,7 +95,7 @@ generada automáticamente y **no debe editarse a mano**.
    `https://betancourtyeison.github.io/` para que las rutas de los
    assets del build resuelvan correctamente.
 
-⚠️ `npm run deploy` sobrescribe (force-push) la rama `master`, que es
+⚠️ `pnpm run deploy` sobrescribe (force-push) la rama `master`, que es
 pública y sirve el sitio en producción — úsalo solo cuando estés seguro
 de publicar los cambios de `develop`.
 
