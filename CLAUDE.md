@@ -116,10 +116,15 @@ The full modernization roadmap (redesign, CI/CD, etc.) lives in
 improvement work so changes follow the agreed phases. Fases 1-2 are done
 (cleanup + Vite/React 19 migration + pnpm). Fase 3 (recruiter-focused
 redesign) is largely done: section reorder, sticky header, react-icons,
-Inter, availability badge, stack chips, grouped skills. Still pending
-from Fase 3: og:image/social preview, own favicon branding, WCAG AA
-contrast audit, project screenshots. Next: Fase 4 (View Transitions
-theme toggle).
+Inter, availability badge, stack chips, grouped skills. Fase 4 is done:
+the theme toggle animates via the View Transitions API (circular reveal
+from the toggle) — `changeTheme(origin)` in `Main.jsx` wraps the state
+flip in `document.startViewTransition` + `flushSync`, with the reveal
+keyframes in `src/index.css`; it falls back to an instant swap when the
+API is unavailable or `prefers-reduced-motion` is set. Still pending from
+Fase 3: og:image/social preview, own favicon branding, WCAG AA contrast
+audit, project screenshots. Next: Fase 5 (SEO/a11y/perf) or Fase 6
+(CI/CD).
 
 - `prettier` is a major behind (2→3); `dotenv` (8→17) too. Low risk,
   bump when convenient.
