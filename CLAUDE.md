@@ -83,22 +83,27 @@ Both generated JSON files are gitignored; the site falls back to
 hardcoded data in `portfolio.js` if they're absent. Fetch failures warn
 but never break the build.
 
-## Build & deploy (no CI — manual, on demand)
+## Build & deploy
 
-There is **no GitHub Actions workflow** (planned: Fase 6). Deployment is
-manual via the `gh-pages` npm package:
+Two paths exist. `homepage`/`base` must keep resolving to
+`https://betancourtyeison.github.io/` (Vite `base: "/"`) for either.
 
-1. `pnpm run deploy` → runs `predeploy` (`pnpm run build`, which runs
-   `fetch.js` then `vite build` into `dist/`).
-2. `gh-pages -b master -d dist` force-pushes the `dist/` output to the
-   `master` branch of this same repo.
-3. GitHub Pages serves the `master` branch directly.
-4. `homepage`/`base` must keep resolving to
-   `https://betancourtyeison.github.io/` (Vite `base: "/"`).
+**Automatic (CI, primary):** [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+builds and deploys to GitHub Pages via the official Pages actions on every
+push to `develop` (or manual `workflow_dispatch`). This requires the repo
+setting **Settings → Pages → Source = "GitHub Actions"**. On PRs to
+`develop`, [.github/workflows/ci.yml](.github/workflows/ci.yml) runs
+`check-format` + `test` + `build`.
 
-Work happens on `develop`; `master` is overwritten by `pnpm run deploy` and
-should not be edited by hand. **Never run `pnpm run deploy` without explicit
-user confirmation** — it force-pushes to `master`, a shared/public branch.
+**Manual (backup):** `pnpm run deploy` (`pnpm run build && gh-pages -b
+master -d dist`) force-pushes `dist/` to the `master` branch, which is the
+legacy Pages source. Only relevant while Pages is still set to serve from
+`master`, or as an emergency path. **Never run `pnpm run deploy` without
+explicit user confirmation** — it force-pushes to `master`, a
+shared/public branch.
+
+Work happens on `develop`; `master` is build output and should not be
+edited by hand.
 
 Local dev: `pnpm start` (Vite dev server), `pnpm run preview` (serve the
 production build), `pnpm test` (Vitest smoke test).
@@ -129,7 +134,9 @@ global `:focus-visible` outline, splash skipped under reduced-motion,
 `loading="lazy"` on below-the-fold images, and Lottie loaded via
 `React.lazy` (lottie-web is now a separate ~80 kB gzip chunk; main bundle
 294→222 kB gzip). Still pending: own favicon branding, WCAG AA contrast
-audit, project screenshots. Next: Fase 6 (CI/CD via GitHub Actions).
+audit, project screenshots. Fase 6 (CI/CD) is done: GitHub Actions build
++ deploy on push to `develop` and PR checks (see Build & deploy above) —
+pending the one-time repo setting Pages → Source = "GitHub Actions".
 
 Known heavy asset: `src/assets/resources/icesi/securityCertified.png` is
 ~7.7 MB and inflates the build — resize/recompress it.

@@ -299,10 +299,23 @@ auditoría de contraste WCAG AA, screenshots de proyectos, y optimizar
 
 ---
 
-## Fase 6 — Automatización del despliegue (CI/CD)
+## Fase 6 — Automatización del despliegue (CI/CD) ✅ (hecha)
 
-Hoy el deploy es manual (`npm run deploy` → force-push a `master`).
-Migrar a **GitHub Actions + GitHub Pages (artifact deploy)**:
+Implementada con dos workflows:
+- `.github/workflows/deploy.yml` — build + deploy oficial de Pages
+  (artifact) en push a `develop` y `workflow_dispatch`, con pnpm.
+- `.github/workflows/ci.yml` — en PRs a `develop`: `check-format`, `test`
+  y `build`.
+
+**Paso manual pendiente (una sola vez):** en el repo, Settings → Pages →
+Build and deployment → Source = **"GitHub Actions"**. Hasta hacerlo, el job
+de deploy fallará y el sitio seguirá sirviéndose desde `master`.
+
+Se conservó `pnpm run deploy` (gh-pages) como respaldo manual. También se
+corrigió `.prettierignore` (ignoraba `serviceWorker.js`/`package-lock.json`
+ya inexistentes; ahora ignora `dist`/`build`/`pnpm-lock.yaml`).
+
+Plan original de referencia:
 
 1. Workflow `.github/workflows/deploy.yml`: en push a `develop` →
    checkout, `npm ci`, `npm run build`, `actions/upload-pages-artifact` +
