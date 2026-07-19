@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import developerActivity from "../../assets/images/developerActivity.svg";
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {illustration, skillsSection} from "../../portfolio";
+import {usePortfolio} from "../../hooks/usePortfolio";
 import {Fade} from "../../components/reveal/Reveal";
 import codingPerson from "../../assets/lottie/codingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
@@ -10,6 +10,7 @@ import StyleContext from "../../contexts/StyleContext";
 
 export default function Skills() {
   const {isDark} = useContext(StyleContext);
+  const {illustration, skillsSection} = usePortfolio();
   if (!skillsSection.display) {
     return null;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./SoftwareSkill.scss";
-import {skillsSection} from "../../portfolio";
+import {usePortfolio} from "../../hooks/usePortfolio";
 import {FaAws} from "react-icons/fa";
 import {
   SiHtml5,
@@ -50,6 +50,7 @@ const iconMap = {
 };
 
 export default function SoftwareSkill() {
+  const {skillsSection} = usePortfolio();
   return (
     <div className="software-skills-main-div">
       {skillsSection.softwareSkills.map(group => (

@@ -1,12 +1,13 @@
 import React from "react";
 import skillImage from "../../assets/images/skill.svg";
 import "./Progress.scss";
-import {illustration, techStack} from "../../portfolio";
+import {usePortfolio} from "../../hooks/usePortfolio";
 import {Fade} from "../../components/reveal/Reveal";
 import Build from "../../assets/lottie/build";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 
 export default function StackProgress() {
+  const {illustration, techStack} = usePortfolio();
   if (techStack.viewSkillBars) {
     return (
       <Fade bottom duration={1000} distance="20px">

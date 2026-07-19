@@ -1,0 +1,41 @@
+@use "../../_globalColor" as *;
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid $buttonColor;
+  border-radius: 999px;
+  padding: 3px;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.language-toggle .lang-option {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: $buttonColor;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-toggle .lang-option.active {
+  background-color: $buttonColor;
+  color: $textColorDark;
+}
+
+.dark-mode .language-toggle {
+  border-color: $textColorDark;
+}
+
+.dark-mode .language-toggle .lang-option {
+  color: $textColorDark;
+}
+
+.dark-mode .language-toggle .lang-option.active {
+  background-color: $textColorDark;
+  color: $darkBackground;
+}
