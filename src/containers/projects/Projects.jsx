@@ -1,10 +1,12 @@
 import React, {useState, useEffect, useContext, Suspense, lazy} from "react";
 import "./Project.scss";
 import Button from "../../components/button/Button";
-import {openSource, socialMediaLinks} from "../../portfolio";
+import {usePortfolio, useUI} from "../../hooks/usePortfolio";
 import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
 export default function Projects() {
+  const {openSource, socialMediaLinks} = usePortfolio();
+  const ui = useUI();
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
   );
@@ -46,7 +48,7 @@ export default function Projects() {
     return (
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
-          <h2 className="project-title">Open Source Projects</h2>
+          <h2 className="project-title">{ui.openSourceProjects}</h2>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {
@@ -60,7 +62,7 @@ export default function Projects() {
             })}
           </div>
           <Button
-            text={"More Projects"}
+            text={ui.moreProjects}
             className="project-button"
             href={socialMediaLinks.github}
             newTab={true}

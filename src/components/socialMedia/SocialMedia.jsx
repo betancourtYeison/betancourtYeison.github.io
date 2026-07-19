@@ -1,6 +1,6 @@
 import React from "react";
 import "./SocialMedia.scss";
-import {socialMediaLinks} from "../../portfolio";
+import {usePortfolio} from "../../hooks/usePortfolio";
 import {
   FaGithub,
   FaLinkedinIn,
@@ -29,6 +29,7 @@ const networks = [
 ];
 
 export default function SocialMedia() {
+  const {socialMediaLinks} = usePortfolio();
   if (!socialMediaLinks.display) {
     return null;
   }

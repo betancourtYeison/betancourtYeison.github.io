@@ -7,11 +7,13 @@ import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 
-import {illustration, greeting, isHireable} from "../../portfolio";
+import {usePortfolio, useUI} from "../../hooks/usePortfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
+  const {illustration, greeting, isHireable} = usePortfolio();
+  const ui = useUI();
   if (!greeting.displayGreeting) {
     return null;
   }
@@ -24,7 +26,7 @@ export default function Greeting() {
               {isHireable && (
                 <span className="hireable-badge">
                   <span className="hireable-dot" aria-hidden="true"></span>
-                  Open to opportunities
+                  {ui.openToOpportunities}
                 </span>
               )}
               <h1
@@ -44,10 +46,10 @@ export default function Greeting() {
               </p>
               <SocialMedia />
               <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
+                <Button text={ui.contactMe} href="#contact" />
                 {greeting.resumeLink && (
                   <Button
-                    text="See my resume"
+                    text={ui.seeResume}
                     newTab={true}
                     href={greeting.resumeLink}
                   />

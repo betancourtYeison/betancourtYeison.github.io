@@ -16,10 +16,16 @@ components just render that config.
 - [src/portfolio.js](src/portfolio.js) — **single source of truth** for
   all personal content: greeting/bio, social links, skills, education,
   work experience, projects, achievements/certifications, blogs, talks,
-  podcast, contact info. Update this file (not components) when the user's
-  CV/profile changes. Assets are resolved with the local `asset()` helper
-  (an `import.meta.glob` over `src/assets/{images,resources,cv}`), not
-  `require()`.
+  podcast, contact info. **Bilingual (EN/ES):** language-independent data
+  (assets, logos, dates, URLs, tech stacks, display flags) is defined once;
+  translatable text lives in `content.en` / `content.es`; `getPortfolio(lang)`
+  merges them into the full portfolio object (plus a `ui` map of UI strings).
+  To add/change content, edit BOTH `content.en` and `content.es` (parallel
+  keys/arrays merged by index). Components read the active-language object via
+  the `usePortfolio()` / `useUI()` hooks (never import from `portfolio.js`
+  directly except `getPortfolio`/`detectLanguage` in `Main.jsx`). Assets are
+  resolved with the local `asset()` helper (an `import.meta.glob` over
+  `src/assets/{images,resources,cv}`), not `require()`.
 - [src/assets/cv/](src/assets/cv/) — the downloadable CV PDF, referenced
   from `greeting.resumeLink` in `portfolio.js`.
 - [src/assets/resources/](src/assets/resources/) — certificate PDFs/images
@@ -53,6 +59,17 @@ the CV and the site are edited independently.
   `react-reveal`; it honors `prefers-reduced-motion`.
 - Dark/light theme is handled via `src/contexts/StyleContext.js`
   (React Context) + `useLocalStorage` hook, toggled from the header.
+- **i18n (EN/ES):** `src/contexts/LanguageContext.js` + `useLocalStorage`
+  hold the active `language`; `Main.jsx` computes `getPortfolio(language)`
+  and provides it. Components consume it through the hooks in
+  [src/hooks/usePortfolio.js](src/hooks/usePortfolio.js) (`usePortfolio()`,
+  `useUI()`, `useLanguage()`). The initial language comes from
+  `detectLanguage()` (browser `navigator.language`, fallback EN) and is
+  persisted like the theme. The segmented EN|ES
+  [LanguageToggle](src/components/languageToggle/LanguageToggle.jsx) sits in
+  the header next to the theme toggle; `Main.jsx` keeps `<html lang>` in
+  sync. Note: `index.html` SEO meta/OG stay English (static SPA shell) —
+  only rendered content switches.
 - Icons come from **react-icons** (tree-shaken SVGs, no CDN): tech logos
   use Simple Icons via an `icon` key in `portfolio.js` mapped in
   [SoftwareSkill.jsx](src/components/softwareSkills/SoftwareSkill.jsx) —
