@@ -42,6 +42,7 @@
   padding: 15px 20px;
   color: $textColor;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .header li a:hover,
@@ -159,15 +160,14 @@
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .header .menu {
+    display: flex;
+    align-items: center;
     max-height: none;
   }
   .header .menu-icon {

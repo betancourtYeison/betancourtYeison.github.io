@@ -73,8 +73,11 @@ function Header() {
         <li>
           <a href="#contact">{ui.navContact}</a>
         </li>
-        <li className="header-lang-item">
-          <LanguageToggle />
+        <li>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a>
+            <LanguageToggle />
+          </a>
         </li>
         <li>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
