@@ -2,17 +2,19 @@ import React, {useContext} from "react";
 import "./Footer.scss";
 import {Fade} from "../../components/reveal/Reveal";
 import StyleContext from "../../contexts/StyleContext";
+import {useUI} from "../../hooks/usePortfolio";
 
 export default function Footer() {
   const {isDark} = useContext(StyleContext);
+  const ui = useUI();
   return (
     <Fade bottom duration={1000} distance="5px">
       <div className="footer-div">
         <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          Made with ❤️ by Yeison Betancourt Solis
+          {ui.madeWith}
         </p>
         <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-          Copyright 2026
+          {ui.copyright}
         </p>
       </div>
     </Fade>

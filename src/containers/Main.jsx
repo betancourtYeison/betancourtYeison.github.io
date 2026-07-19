@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {flushSync} from "react-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
@@ -16,8 +16,9 @@ import Education from "./education/Education";
 import ScrollToTopButton from "./topbutton/Top";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
-import {splashScreen} from "../portfolio";
+import {getPortfolio, detectLanguage} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
+import {LanguageProvider} from "../contexts/LanguageContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
@@ -27,8 +28,20 @@ const Main = () => {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
-  const showSplash = splashScreen.enabled && !prefersReducedMotion;
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+
+  // Language: persisted like the theme, defaulting to the browser language.
+  const [language, setLanguage] = useLocalStorage("lang", detectLanguage());
+  const portfolio = useMemo(() => getPortfolio(language), [language]);
+  const changeLanguage = () =>
+    setLanguage(prev => (prev === "es" ? "en" : "es"));
+
+  // Keep <html lang> in sync for a11y / SEO.
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  const showSplash = portfolio.splashScreen.enabled && !prefersReducedMotion;
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(showSplash);
 
@@ -36,7 +49,7 @@ const Main = () => {
     if (showSplash) {
       const splashTimer = setTimeout(
         () => setIsShowingSplashAnimation(false),
-        splashScreen.duration
+        portfolio.splashScreen.duration
       );
       return () => {
         clearTimeout(splashTimer);
@@ -77,29 +90,31 @@ const Main = () => {
 
   return (
     <div className={isDark ? "dark-mode" : null}>
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
-        {isShowingSplashAnimation && splashScreen.enabled ? (
-          <SplashScreen />
-        ) : (
-          <>
-            <Header />
-            <Greeting />
-            <WorkExperience />
-            <StartupProject />
-            <Skills />
-            <StackProgress />
-            <Achievement />
-            <Education />
-            <Projects />
-            <Blogs />
-            <Talks />
-            <Podcast />
-            <Profile />
-            <Footer />
-            <ScrollToTopButton />
-          </>
-        )}
-      </StyleProvider>
+      <LanguageProvider value={{language, changeLanguage, portfolio}}>
+        <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+          {isShowingSplashAnimation && portfolio.splashScreen.enabled ? (
+            <SplashScreen />
+          ) : (
+            <>
+              <Header />
+              <Greeting />
+              <WorkExperience />
+              <StartupProject />
+              <Skills />
+              <StackProgress />
+              <Achievement />
+              <Education />
+              <Projects />
+              <Blogs />
+              <Talks />
+              <Podcast />
+              <Profile />
+              <Footer />
+              <ScrollToTopButton />
+            </>
+          )}
+        </StyleProvider>
+      </LanguageProvider>
     </div>
   );
 };
