@@ -14,6 +14,10 @@ html,
 body {
   scroll-behavior: smooth;
 }
+/* Offset anchor jumps so sections aren't hidden under the sticky header */
+html {
+  scroll-padding-top: 110px;
+}
 body {
   margin: 0;
   font: 19px / 1.4 "Inter Variable", system-ui, -apple-system, sans-serif;
