@@ -6,7 +6,7 @@ import {
   greeting,
   workExperiences,
   skillsSection,
-  openSource,
+  bigProjects,
   blogSection,
   talkSection,
   achievementSection
@@ -15,7 +15,10 @@ import {
 function Header() {
   const {isDark} = useContext(StyleContext);
   const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
+  // "Open Source" in the nav points at the visible Big Projects section
+  // (#projects). The GitHub-repos section only renders with a token, so
+  // its #opensource anchor is unreliable to link to.
+  const viewProjects = bigProjects.display;
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
@@ -42,14 +45,14 @@ function Header() {
               <a href="#experience">Work Experiences</a>
             </li>
           )}
+          {viewProjects && (
+            <li>
+              <a href="#projects">Open Source</a>
+            </li>
+          )}
           {viewSkills && (
             <li>
               <a href="#skills">Skills</a>
-            </li>
-          )}
-          {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
             </li>
           )}
           {viewAchievement && (
